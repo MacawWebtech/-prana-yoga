@@ -97,6 +97,7 @@ function initBookingWorkflow() {
     if (btnPrev && btnNext) {
       if (currentStep === 1) {
         btnPrev.style.display = 'none';
+        btnNext.style.display = 'inline-flex';
       } else if (currentStep === 6) {
         btnPrev.style.display = 'none';
         btnNext.style.display = 'none';

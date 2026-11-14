@@ -2334,3 +2334,353 @@ nav.nav-menu {
     min-height: 0;
   }
 }
+
+/* ==========================================================================
+   v2.3 REFINEMENTS
+   1. Centered card rows (tablet + desktop)
+   2. Compact, aligned footer (tablet)
+   3. "RTL" text label for the RTL toggle
+   4. Schedule + booking modal fixes (mobile only)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CENTER ALIGNMENT FOR CARD ROWS
+   Any grid row that holds image boxes, text cards, instructor cards,
+   pricing cards or testimonials centers its last (incomplete) line, so a
+   lone card is never stuck on the left. Mobile is untouched: cards are
+   already full width there.
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .row:has(> [class*="col-"] > :is(.studio-card, .instructor-card, .pricing-card, .testimonial-card)) {
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET FOOTER (768px - 1199px): tighter spacing, aligned columns
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .site-footer {
+    padding: 44px 0 22px;
+  }
+
+  .site-footer h5 {
+    margin-bottom: 12px;
+    font-size: 1.12rem;
+    line-height: 1.25;
+  }
+
+  .site-footer .site-logo {
+    margin-bottom: 12px !important;
+  }
+
+  .site-footer p {
+    line-height: 1.55;
+    font-size: 0.85rem !important;
+  }
+
+  .site-footer .footer-links {
+    gap: 7px;
+  }
+
+  .site-footer .footer-links li a {
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  .site-footer .social-links {
+    gap: 10px;
+  }
+
+  .footer-bottom {
+    margin-top: 28px;
+    padding-top: 18px;
+    gap: 10px 24px;
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom > div:last-child {
+    gap: 8px 14px !important;
+    flex-wrap: wrap;
+  }
+}
+
+/* Footer columns become a clean grid on tablets (replaces stacked columns) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .site-footer .container-custom > .row {
+    display: grid;
+    margin: 0;
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+  }
+
+  .site-footer .container-custom > .row > [class*="col-"] {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Portrait tablet: 2 x 2 */
+@media (min-width: 768px) and (max-width: 991px) {
+  .site-footer .container-custom > .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 40px;
+  }
+}
+
+/* Landscape tablet / small laptop: one row of four balanced columns */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .site-footer .container-custom > .row {
+    grid-template-columns: 1.2fr 0.8fr 0.95fr 1.4fr;
+    gap: 0 32px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. RTL TOGGLE: text label instead of an icon
+   -------------------------------------------------------------------------- */
+button.rtl-toggle-btn:not(.btn) {
+  width: auto !important;
+  min-width: 40px !important;
+  max-width: none !important;
+  aspect-ratio: auto !important;
+  flex: 0 0 auto !important;
+  padding: 0 9px !important;
+  border-radius: 999px !important;
+  font-family: var(--font-body, inherit);
+  font-size: 0.72rem !important;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.rtl-toggle-btn .rtl-label {
+  display: inline-block;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   4. SCHEDULE PAGE + BOOKING MODAL, MOBILE ONLY
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  /* Day tabs: one tidy scrolling strip */
+  .schedule-day-nav {
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    padding-bottom: 6px;
+  }
+
+  .schedule-day-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .day-tab-btn {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .schedule-filter-bar {
+    padding: 16px;
+  }
+
+  /* Session rows stack instead of pushing "Reserve Mat" out of the card */
+  .schedule-row-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .schedule-time {
+    min-width: 0;
+  }
+
+  .schedule-title {
+    flex: none;
+    min-width: 0;
+  }
+
+  .schedule-row-card > div:last-child {
+    width: 100%;
+  }
+
+  .schedule-row-card > div:last-child .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Booking modal fits the visible viewport */
+  .modal-dialog-custom {
+    max-height: calc(100vh - 40px);
+    max-height: calc(100dvh - 40px);
+  }
+}
+
+@media (max-width: 575px) {
+  /* Stepper: numbered circles, only the active step shows its label */
+  .booking-stepper {
+    margin-bottom: 40px;
+  }
+
+  .booking-stepper .step-item {
+    flex: 0 0 32px;
+    width: 32px;
+  }
+
+  .booking-stepper .step-circle {
+    margin: 0 auto;
+  }
+
+  .booking-stepper .step-label {
+    display: none;
+  }
+
+  .booking-stepper .step-item.active .step-label {
+    display: block;
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 0.72rem;
+  }
+
+  /* Instructor options: avatar above the name so nothing is clipped */
+  .book-instructor-option {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 6px !important;
+    padding: 12px 8px !important;
+    min-width: 0;
+  }
+
+  .book-instructor-option > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  /* Back / Continue share the footer width */
+  .modal-footer-custom {
+    padding: 14px 20px;
+  }
+
+  .modal-footer-custom .btn {
+    flex: 1 1 0;
+    justify-content: center;
+  }
+
+  /* Confirmation reference no longer wraps inside an oval */
+  #bookingConfirmationSummary [style*="border-radius: var(--border-radius-pill)"] {
+    display: block !important;
+    border-radius: var(--border-radius) !important;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* ==========================================================================
+   5. MEMBERSHIP COMPARISON: one-by-one cards on mobile (CSS only, HTML unchanged)
+   Each perk row becomes its own card listing every plan, so there is no
+   horizontal swiping. Tablet and desktop keep the full table.
+   ========================================================================== */
+@media (max-width: 767px) {
+  /* The "swipe horizontally" hint no longer applies */
+  .d-md-none:has(+ .table-responsive-custom .table-col-highlight) {
+    display: none !important;
+  }
+
+  .table-responsive-custom:has(.table-col-highlight) {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .table-responsive-custom:has(.table-col-highlight) .table-custom,
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody {
+    display: block;
+    min-width: 0 !important;
+    width: 100%;
+  }
+
+  /* Header row is replaced by the per-value labels below */
+  .table-responsive-custom:has(.table-col-highlight) .table-custom thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody tr {
+    display: block;
+    margin-bottom: 16px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+  }
+
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    height: auto;
+    padding: 12px 18px;
+    text-align: right;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody tr:not(:last-child) td {
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody td:last-child {
+    border-bottom: 0;
+  }
+
+  /* Perk name = card title */
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody td:first-child {
+    display: block;
+    padding: 14px 18px;
+    text-align: center !important;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    background-color: var(--color-surface-tint);
+  }
+
+  /* Plan name label in front of each value */
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody td:not(:first-child)::before {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-align: left;
+    color: var(--color-black);
+    flex: 0 1 auto;
+  }
+
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody td:nth-child(2)::before { content: "Single Drop-In"; }
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody td:nth-child(3)::before { content: "10-Class Pack"; }
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody td:nth-child(4)::before { content: "Unlimited Monthly"; }
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody td:nth-child(5)::before { content: "Annual Devotion"; }
+
+  /* Button row: buttons already name their plan, so show them full width */
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody tr:last-child td:not(:first-child)::before {
+    display: none;
+  }
+
+  .table-responsive-custom:has(.table-col-highlight) .table-custom tbody tr:last-child td:not(:first-child) .btn {
+    width: 100%;
+  }
+}
