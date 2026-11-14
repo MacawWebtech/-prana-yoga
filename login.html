@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member & Admin Login — Prana Yoga Studio</title>
+  <meta name="description" content="Sign in to your Prana Yoga Studio member account or administrative portal. Manage bookings, class history, and membership.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232F6A55'/><text x='50' y='62' font-size='38' text-anchor='middle' fill='%23ffffff' font-family='serif'>ॐ</text></svg>">
+
+    <!-- Pre-render Theme Initialization (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = (localStorage.getItem('prana-theme') || localStorage.getItem('stackly-theme'));
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+<!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=2.2">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; background-color: var(--color-surface-tint);">
+
+  <!-- Minimal Top Header -->
+  <header style="background-color: var(--color-surface); border-bottom: 1px solid var(--color-border-subtle); padding: 16px 0;">
+    <div class="container-custom d-flex justify-content-between align-items-center">
+      <a href="index.html" class="site-logo" style="font-size: 1.5rem;">
+        <span class="logo-icon" style="width: 32px; height: 32px;"><i class="bi bi-flower1"></i></span>
+        PRANA<span>YOGA</span>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        <button type="button" class="rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+        <a href="index.html" class="btn btn-outline-dark btn-sm"><i class="bi bi-arrow-left"></i><span class="d-none d-sm-inline ms-1"> Back to Site</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login Main Content -->
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 18px;">
+    <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); padding: 40px 32px; max-width: 460px; width: 100%; box-shadow: var(--shadow-hover);">
+      <div class="text-center mb-4">
+        <span class="section-tag mb-2"><i class="bi bi-lock"></i> Secure Sanctuary Portal</span>
+        <h2 style="font-size: 1.85rem; margin-bottom: 6px;">Welcome Back</h2>
+        <p style="font-size: 0.9rem; color: var(--color-black-muted);">Sign in to your member or studio administration account.</p>
+      </div>
+
+      <!-- Demo Account Quick Selector -->
+      <div style="background-color: var(--color-surface-tint); padding: 14px; border-radius: var(--border-radius); border: 1px solid var(--color-border); margin-bottom: 24px;">
+        <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-black); margin-bottom: 8px;">
+          <i class="bi bi-key-fill text-primary me-1"></i> Demo Quick Login Buttons:
+        </div>
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-outline-primary btn-sm flex-fill" id="fillMemberDemo">
+            Member Portal
+          </button>
+          <button type="button" class="btn btn-outline-dark btn-sm flex-fill" id="fillAdminDemo">
+            Admin Portal
+          </button>
+        </div>
+      </div>
+
+      <form id="loginForm" data-validate="true">
+        <div class="mb-3">
+          <label class="form-label" for="loginEmail">Email Address</label>
+          <div style="position: relative;">
+            <input type="email" id="loginEmail" class="form-control" required placeholder="name@domain.com">
+          </div>
+          <div class="invalid-feedback">Please enter a valid email address.</div>
+        </div>
+
+        <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <label class="form-label mb-0" for="loginPassword">Password</label>
+            <a href="forgot-password.html" style="font-size: 0.82rem; color: var(--color-primary);">Forgot password?</a>
+          </div>
+          <div style="position: relative;" class="position-relative">
+            <input type="password" id="loginPassword" class="form-control" required placeholder="••••••••" style="padding-right: 42px;">
+            <button type="button" class="password-toggle-btn" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--color-black-muted); cursor: pointer;" aria-label="Toggle password visibility">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          <div class="invalid-feedback">Please enter your password.</div>
+        </div>
+
+        <div class="form-check mb-4" style="font-size: 0.88rem;">
+          <input class="form-check-input" type="checkbox" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">Keep me signed in on this device</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mb-3">
+          <i class="bi bi-box-arrow-in-right me-1"></i> Sign In to Account
+        </button>
+
+        <div class="text-center" style="font-size: 0.9rem; color: var(--color-black-soft);">
+          Not registered yet? <a href="register.html" style="font-weight: 600;">Create Member Account</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer style="padding: 16px 0; text-align: center; font-size: 0.82rem; color: var(--color-black-muted); border-top: 1px solid var(--color-border-subtle);">
+    &copy; 2026 Prana Yoga & Meditation Studio. All rights reserved.
+  </footer>
+
+  <script src="assets/js/main.js?v=2.2"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const emailInput = document.getElementById('loginEmail');
+      const passInput = document.getElementById('loginPassword');
+      const form = document.getElementById('loginForm');
+
+      document.getElementById('fillMemberDemo').addEventListener('click', () => {
+        emailInput.value = 'member@pranayoga.com';
+        passInput.value = 'yoga2026';
+        window.showToast('Filled demo Member credentials. Redirecting to Member Dashboard...');
+        setTimeout(() => {
+          window.location.href = 'member-dashboard/index.html';
+        }, 800);
+      });
+
+      document.getElementById('fillAdminDemo').addEventListener('click', () => {
+        emailInput.value = 'admin@pranayoga.com';
+        passInput.value = 'admin2026';
+        window.showToast('Filled demo Admin credentials. Redirecting to Admin Dashboard...');
+        setTimeout(() => {
+          window.location.href = 'admin-dashboard/index.html';
+        }, 800);
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const val = emailInput.value.toLowerCase();
+        if (val.includes('admin')) {
+          window.location.href = 'admin-dashboard/index.html';
+        } else {
+          window.location.href = 'member-dashboard/index.html';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

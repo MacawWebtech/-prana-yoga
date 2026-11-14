@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings — Prana Yoga Member Dashboard</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232F6A55'/><text x='50' y='62' font-size='38' text-anchor='middle' fill='%23ffffff' font-family='serif'>ॐ</text></svg>">
+
+    <!-- Pre-render Theme Initialization (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = (localStorage.getItem('prana-theme') || localStorage.getItem('stackly-theme'));
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+<!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/rtl.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- Member Sidebar -->
+    <aside class="dashboard-sidebar" aria-label="Member Navigation">
+      <div class="sidebar-brand">
+        <a href="index.html" class="logo-text">
+          <span class="logo-icon" style="width: 32px; height: 32px; font-size: 1.1rem;"><i class="bi bi-flower1"></i></span>
+          <span class="brand-name">PRANA<span>YOGA</span></span>
+        </a>
+      </div>
+
+      <div class="sidebar-menu-wrapper">
+        <div class="sidebar-section-title">Member Menu</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="index.html" class="dash-nav-link">
+              <i class="bi bi-grid-1x2"></i>
+              <span>Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="bookings.html" class="dash-nav-link active">
+              <i class="bi bi-calendar-check"></i>
+              <span>My Bookings</span>
+            </a>
+          </li>
+          <li>
+            <a href="class-history.html" class="dash-nav-link">
+              <i class="bi bi-clock-history"></i>
+              <span>Class History</span>
+            </a>
+          </li>
+          <li>
+            <a href="membership.html" class="dash-nav-link">
+              <i class="bi bi-gem"></i>
+              <span>My Membership</span>
+            </a>
+          </li>
+          <li>
+            <a href="payments.html" class="dash-nav-link">
+              <i class="bi bi-receipt"></i>
+              <span>Payment History</span>
+            </a>
+          </li>
+          <li>
+            <a href="profile.html" class="dash-nav-link">
+              <i class="bi bi-person"></i>
+              <span>Wellness Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" class="dash-nav-link">
+              <i class="bi bi-gear"></i>
+              <span>Account Settings</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar-section-title">Studio Quick Links</div>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="../schedule.html" class="dash-nav-link">
+              <i class="bi bi-calendar3"></i>
+              <span>Full Studio Schedule</span>
+            </a>
+          </li>
+          <li>
+            <a href="../classes.html" class="dash-nav-link">
+              <i class="bi bi-card-list"></i>
+              <span>Browse Classes</span>
+            </a>
+          </li>
+          <li>
+            <a href="../index.html" class="dash-nav-link">
+              <i class="bi bi-arrow-up-right-square"></i>
+              <span>Public Website</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="../login.html" class="dash-nav-link text-danger" style="color: #b33939 !important;">
+          <i class="bi bi-box-arrow-left"></i>
+          <span>Log Out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" aria-label="Toggle Sidebar Navigation"><i class="bi bi-list"></i></button>
+          <div style="font-size: 0.95rem; font-weight: 600; color: var(--color-black);">My Bookings & Reservations</div>
+        </div>
+        <div class="topbar-right">
+          <button type="button" class="theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button type="button" class="rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <div class="dropdown-custom">
+            <button type="button" class="dropdown-toggle-custom">
+              <img src="../assets/images/instructors/elena-rostova.jpg" alt="Member Avatar" class="user-avatar-sm">
+              <span class="d-none d-md-inline" style="font-size: 0.88rem; font-weight: 600; color: var(--color-black);">Elena R.</span>
+            </button>
+            <ul class="dropdown-menu-custom">
+              <li><a href="profile.html"><i class="bi bi-person"></i> Wellness Profile</a></li>
+              <li><a href="membership.html"><i class="bi bi-gem"></i> My Membership</a></li>
+              <li><a href="../login.html"><i class="bi bi-box-arrow-left"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+          <div>
+            <h2 style="font-size: 1.8rem; margin-bottom: 4px;">Session Reservations</h2>
+            <p style="font-size: 0.9rem; color: var(--color-black-muted); margin: 0;">Manage your upcoming class spots and view past reservations.</p>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary btn-sm" data-trigger="book-class">
+              <i class="bi bi-plus-circle me-1"></i> Book a Class
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="d-flex gap-2 mb-4">
+          <button type="button" class="filter-pill table-tab-btn active" data-target="upcoming">Upcoming (3)</button>
+          <button type="button" class="filter-pill table-tab-btn" data-target="past">Past Sessions (48)</button>
+          <button type="button" class="filter-pill table-tab-btn" data-target="cancelled">Cancelled (2)</button>
+        </div>
+
+        <!-- Upcoming Tab Panel -->
+        <div class="tab-content-panel" data-panel="upcoming">
+          <div class="dashboard-card">
+            <div class="table-responsive-custom">
+              <table class="table-custom">
+                <thead>
+                  <tr>
+                    <th>Class Session</th>
+                    <th>Teacher</th>
+                    <th>Date & Time</th>
+                    <th>Studio Space</th>
+                    <th>Mat #</th>
+                    <th>Status</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="booking-item-card">
+                    <td>
+                      <strong class="class-title-text">Solar Vinyasa Flow</strong>
+                      <small style="display: block; color: var(--color-black-muted);">60 Mins • All Levels</small>
+                    </td>
+                    <td>Elena Rostova</td>
+                    <td><span class="session-time-text">Tomorrow, Nov 12 at 07:00 AM</span></td>
+                    <td>Sun Sanctuary A</td>
+                    <td><span class="badge-custom">Mat 07</span></td>
+                    <td><span class="status-pill status-confirmed">Confirmed</span></td>
+                    <td style="text-align: right;">
+                      <button type="button" class="btn btn-outline-dark btn-sm me-1" data-action="reschedule-booking" title="Reschedule"><i class="bi bi-clock"></i></button>
+                      <button type="button" class="btn btn-outline-dark btn-sm" data-action="cancel-booking" title="Cancel Booking" style="color: #b33939 !important;"><i class="bi bi-trash"></i></button>
+                    </td>
+                  </tr>
+
+                  <tr class="booking-item-card">
+                    <td>
+                      <strong class="class-title-text">Yin Sanctuary & Deep Fascia</strong>
+                      <small style="display: block; color: var(--color-black-muted);">75 Mins • Restorative</small>
+                    </td>
+                    <td>David Chen</td>
+                    <td><span class="session-time-text">Thu, Nov 14 at 07:00 PM</span></td>
+                    <td>Earth Sanctuary B</td>
+                    <td><span class="badge-custom">Mat 12</span></td>
+                    <td><span class="status-pill status-confirmed">Confirmed</span></td>
+                    <td style="text-align: right;">
+                      <button type="button" class="btn btn-outline-dark btn-sm me-1" data-action="reschedule-booking" title="Reschedule"><i class="bi bi-clock"></i></button>
+                      <button type="button" class="btn btn-outline-dark btn-sm" data-action="cancel-booking" title="Cancel Booking" style="color: #b33939 !important;"><i class="bi bi-trash"></i></button>
+                    </td>
+                  </tr>
+
+                  <tr class="booking-item-card">
+                    <td>
+                      <strong class="class-title-text">Sacred Sound Bath Healing</strong>
+                      <small style="display: block; color: var(--color-black-muted);">60 Mins • Crystal Resonance</small>
+                    </td>
+                    <td>Marcus Vance</td>
+                    <td><span class="session-time-text">Fri, Nov 15 at 07:30 PM</span></td>
+                    <td>Sun Sanctuary A</td>
+                    <td><span class="badge-custom">Mat 03</span></td>
+                    <td><span class="status-pill status-confirmed">Confirmed</span></td>
+                    <td style="text-align: right;">
+                      <button type="button" class="btn btn-outline-dark btn-sm me-1" data-action="reschedule-booking" title="Reschedule"><i class="bi bi-clock"></i></button>
+                      <button type="button" class="btn btn-outline-dark btn-sm" data-action="cancel-booking" title="Cancel Booking" style="color: #b33939 !important;"><i class="bi bi-trash"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Past Sessions Panel -->
+        <div class="tab-content-panel" data-panel="past" style="display: none;">
+          <div class="dashboard-card">
+            <div class="table-responsive-custom">
+              <table class="table-custom">
+                <thead>
+                  <tr>
+                    <th>Class Session</th>
+                    <th>Teacher</th>
+                    <th>Date Completed</th>
+                    <th>Studio Space</th>
+                    <th>Status</th>
+                    <th style="text-align: right;">Reflection</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Traditional Hatha Foundation</strong></td>
+                    <td>Priya Sharma</td>
+                    <td>Nov 09, 2026 at 10:30 AM</td>
+                    <td>Earth Sanctuary B</td>
+                    <td><span class="status-pill status-completed">Attended</span></td>
+                    <td style="text-align: right;">
+                      <span class="text-primary"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Solar Vinyasa Flow</strong></td>
+                    <td>Elena Rostova</td>
+                    <td>Nov 06, 2026 at 07:00 AM</td>
+                    <td>Sun Sanctuary A</td>
+                    <td><span class="status-pill status-completed">Attended</span></td>
+                    <td style="text-align: right;">
+                      <span class="text-primary"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Somatic Breathwork & Sound</strong></td>
+                    <td>Marcus Vance</td>
+                    <td>Nov 01, 2026 at 06:00 PM</td>
+                    <td>Sun Sanctuary A</td>
+                    <td><span class="status-pill status-completed">Attended</span></td>
+                    <td style="text-align: right;">
+                      <span class="text-primary"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cancelled Sessions Panel -->
+        <div class="tab-content-panel" data-panel="cancelled" style="display: none;">
+          <div class="dashboard-card">
+            <div class="table-responsive-custom">
+              <table class="table-custom">
+                <thead>
+                  <tr>
+                    <th>Class Session</th>
+                    <th>Teacher</th>
+                    <th>Original Date</th>
+                    <th>Status</th>
+                    <th>Refund Note</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Power Vinyasa Conditioning</strong></td>
+                    <td>Elena Rostova</td>
+                    <td>Oct 22, 2026 at 05:30 PM</td>
+                    <td><span class="status-pill status-cancelled">Cancelled by Member</span></td>
+                    <td>100% Credit Restored to Pass</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js?v=2.2"></script>
+  <script src="../assets/js/booking.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us & Visit Sanctuary — Prana Yoga Studio</title>
+  <meta name="description" content="Reach our studio concierge, find directions to our serene sanctuary, inquire about private bookings, or explore opening hours at Prana Studio.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232F6A55'/><text x='50' y='62' font-size='38' text-anchor='middle' fill='%23ffffff' font-family='serif'>ॐ</text></svg>">
+
+    <!-- Pre-render Theme Initialization (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = (localStorage.getItem('prana-theme') || localStorage.getItem('stackly-theme'));
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+<!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=2.2">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container-custom header-container">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon"><i class="bi bi-flower1"></i></span>
+        PRANA<span>YOGA</span>
+      </a>
+
+      <nav class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home <i class="bi bi-chevron-down ms-1" style="font-size: 0.75rem;"></i></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html">Home 1 — Studio Main</a></li>
+            <li><a href="index-2.html">Home 2 — Mindful Lifestyle</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="classes.html" class="nav-link">Classes</a></li>
+        <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li class="nav-item"><a href="instructors.html" class="nav-link">Instructors</a></li>
+        <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        <button type="button" class="rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+        <a href="login.html" class="btn btn-outline-dark btn-sm header-cta-desktop"><i class="bi bi-person"></i> Account</a>
+        <button type="button" class="btn btn-primary btn-sm header-cta-desktop" data-trigger="book-class">Book a Class</button>
+        <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu"><i class="bi bi-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="site-logo">
+        <span class="logo-icon" style="width: 32px; height: 32px;"><i class="bi bi-flower1"></i></span>
+        PRANA<span>YOGA</span>
+      </div>
+      <button type="button" class="modal-close-btn mobile-nav-close" aria-label="Close Mobile Menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home 1 — Studio Main</a></li>
+      <li><a href="index-2.html">Home 2 — Mindful Lifestyle</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="schedule.html">Schedule & Booking</a></li>
+      <li><a href="instructors.html">Instructors</a></li>
+      <li><a href="membership.html">Membership Plans</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Studio Gallery</a></li>
+      <li><a href="blog.html">Wellness Blog</a></li>
+      <li><a href="contact.html" class="active">Contact Us</a></li>
+      <li><a href="member-dashboard/index.html">Member Dashboard</a></li>
+      <li><a href="admin-dashboard/index.html">Admin Dashboard</a></li>
+    </ul>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+      <button type="button" class="btn btn-primary w-100" data-trigger="book-class">Book a Class</button>
+      <a href="login.html" class="btn btn-outline-dark w-100">Member Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Page Banner with exact path: assets/images/page-banners/contact-banner.jpg -->
+    <section class="page-banner" style="background-image: url('assets/images/page-banners/contact-banner.jpg');">
+      <div class="page-banner-overlay"></div>
+      <div class="container-custom">
+        <span class="section-tag mb-2"><i class="bi bi-geo-alt"></i> Connect With Us</span>
+        <h1>Contact & Sanctuary Location</h1>
+        <p>We are here to support your practice. Send an inquiry or visit our tranquil urban sanctuary.</p>
+        <ul class="breadcrumb-custom">
+          <li><a href="index.html">Home</a></li>
+          <li class="separator">/</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 1: Contact Info Cards (Equal Height Grid) -->
+    <section class="section-py">
+      <div class="container-custom">
+        <div class="row g-4 equal-height-grid">
+          <!-- Card 1 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="studio-card card-equal text-center p-4">
+              <div class="icon-box icon-box-circle icon-box-center" style="margin-bottom: 16px;">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <h5 style="margin-bottom: 6px;">Studio Location</h5>
+              <p style="font-size: 0.9rem; color: var(--color-black-soft); margin: 0;">
+                742 Evergreen Lotus Sanctuary<br>Suite 300 (Fl 3)<br>Metro Station: Lotus Center
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="studio-card card-equal text-center p-4">
+              <div class="icon-box icon-box-circle icon-box-center" style="margin-bottom: 16px;">
+                <i class="bi bi-telephone"></i>
+              </div>
+              <h5 style="margin-bottom: 6px;">Direct Phone</h5>
+              <p style="font-size: 0.9rem; color: var(--color-black-soft); margin-bottom: 4px;">
+                +1 (555) 389-4921
+              </p>
+              <small style="color: var(--color-black-muted);">Front Desk Concierge (6am-9pm)</small>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="studio-card card-equal text-center p-4">
+              <div class="icon-box icon-box-circle icon-box-center" style="margin-bottom: 16px;">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <h5 style="margin-bottom: 6px;">Email Inquiries</h5>
+              <p style="font-size: 0.9rem; color: var(--color-black-soft); margin-bottom: 4px;">
+                namaste@pranayoga.com
+              </p>
+              <small style="color: var(--color-black-muted);">Replies within 24 business hours</small>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="studio-card card-equal text-center p-4">
+              <div class="icon-box icon-box-circle icon-box-center" style="margin-bottom: 16px;">
+                <i class="bi bi-clock"></i>
+              </div>
+              <h5 style="margin-bottom: 6px;">Sanctuary Hours</h5>
+              <p style="font-size: 0.88rem; color: var(--color-black-soft); margin: 0;">
+                Mon – Fri: 06:30 AM – 08:30 PM<br>
+                Sat – Sun: 07:30 AM – 06:00 PM
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Contact Form & Studio Location Map -->
+    <section class="section-py" style="background-color: var(--color-surface-tint); border-top: 1px solid var(--color-border);">
+      <div class="container-custom">
+        <div class="row g-5 align-items-stretch">
+          <!-- Form -->
+          <div class="col-lg-7">
+            <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); padding: 36px;">
+              <span class="section-tag mb-2"><i class="bi bi-chat-left-dots"></i> Message Us</span>
+              <h3 style="margin-bottom: 12px;">Send an Inquiry to Our Concierge</h3>
+              <p style="font-size: 0.92rem; color: var(--color-black-soft); margin-bottom: 24px;">
+                Have questions about beginner classes, private sessions, or corporate wellness? Fill out this form and our student advisors will be in touch.
+              </p>
+
+              <form data-validate="true" data-success-message="Thank you! Your inquiry has been sent to our studio concierge. We will respond shortly.">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" class="form-control" required placeholder="Aria Robinson">
+                    <div class="invalid-feedback">Please enter your name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" class="form-control" required placeholder="aria@domain.com">
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Phone Number (Optional)</label>
+                    <input type="tel" class="form-control" placeholder="+1 (555) 000-0000">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Subject of Inquiry</label>
+                    <select class="form-select" required>
+                      <option value="">Select a topic...</option>
+                      <option value="class-booking">First Class Booking Inquiry</option>
+                      <option value="membership">Membership & Pricing Guidance</option>
+                      <option value="private-session">Private 1-on-1 Sessions</option>
+                      <option value="retreats">Upcoming Retreats & Workshops</option>
+                      <option value="general">Other General Question</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">How can we assist you? *</label>
+                    <textarea class="form-control" rows="5" required placeholder="Tell us about your experience level, goals, or questions..."></textarea>
+                    <div class="invalid-feedback">Please enter your message.</div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check" style="font-size: 0.88rem;">
+                      <input class="form-check-input" type="checkbox" id="contactConsent" required>
+                      <label class="form-check-label" for="contactConsent" style="color: var(--color-black-soft);">
+                        I agree to receive communications regarding my inquiry from Prana Studio.
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary">
+                      <i class="bi bi-send me-1"></i> Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Google Maps Integration Placeholder Frame -->
+          <div class="col-lg-5">
+            <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); overflow: hidden; height: 100%; display: flex; flex-direction: column;">
+              <div style="background-color: var(--color-surface-tint); padding: 20px 24px; border-bottom: 1px solid var(--color-border);">
+                <h5 style="margin: 0; font-size: 1.15rem;"><i class="bi bi-map text-primary me-2"></i> How to Find Us</h5>
+                <small style="color: var(--color-black-muted);">Convenient street parking & direct subway elevator access.</small>
+              </div>
+
+              <!-- Map Visual Placeholder -->
+              <div style="flex: 1; min-height: 320px; background: linear-gradient(135deg, rgba(47, 106, 85, 0.12), rgba(18, 22, 20, 0.05)); position: relative; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px;">
+                <div style="background-color: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); padding: 24px 28px; box-shadow: var(--shadow-hover); max-width: 320px;">
+                  <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--color-primary); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 12px;">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <h6 style="margin-bottom: 4px; font-family: var(--font-body); font-weight: 700;">Prana Yoga Sanctuary</h6>
+                  <p style="font-size: 0.82rem; color: var(--color-black-muted); margin-bottom: 14px;">
+                    742 Evergreen Lotus Sanctuary, Fl 3
+                  </p>
+                  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-sm w-100">
+                    <i class="bi bi-box-arrow-up-right me-1"></i> Open Google Maps
+                  </a>
+                </div>
+              </div>
+
+              <div style="padding: 20px 24px; border-top: 1px solid var(--color-border); font-size: 0.88rem; background-color: var(--color-surface);">
+                <div style="display: flex; gap: 10px; margin-bottom: 6px;">
+                  <i class="bi bi-train-front text-primary"></i>
+                  <span>Subway: Green Line, Lotus Station (Exit 2, 200m walk)</span>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                  <i class="bi bi-p-square text-primary"></i>
+                  <span>Parking: Undercover bicycle station & validated car parking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container-custom">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="site-logo mb-3" style="color: #fff;">
+            <span class="logo-icon"><i class="bi bi-flower1"></i></span>
+            PRANA<span>YOGA</span>
+          </div>
+          <p style="font-size: 0.92rem; color: rgba(255, 255, 255, 0.7); max-width: 320px; margin-bottom: 20px;">
+            A sanctuary devoted to traditional yogic alignment, acoustic meditation, and holistic mindfulness in our urban oasis.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Philosophy</a></li>
+            <li><a href="classes.html">All Classes</a></li>
+            <li><a href="instructors.html">Our Teachers</a></li>
+            <li><a href="schedule.html">Class Schedule</a></li>
+            <li><a href="membership.html">Memberships</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <h5>Dashboards & Portals</h5>
+          <ul class="footer-links">
+            <li><a href="member-dashboard/index.html">Member Portal</a></li>
+            <li><a href="member-dashboard/bookings.html">My Bookings</a></li>
+            <li><a href="admin-dashboard/index.html">Admin Dashboard</a></li>
+            <li><a href="login.html">Sign In / Register</a></li>
+            <li><a href="coming-soon.html">Upcoming Retreats</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h5>Sanctuary Hours</h5>
+          <p style="font-size: 0.88rem; margin-bottom: 6px;">Monday – Friday: 06:30 AM – 08:30 PM</p>
+          <p style="font-size: 0.88rem; margin-bottom: 16px;">Saturday – Sunday: 07:30 AM – 06:00 PM</p>
+          <div style="font-size: 0.88rem; color: rgba(255, 255, 255, 0.75);">
+            <div><i class="bi bi-geo-alt me-2"></i> 742 Evergreen Lotus Sanctuary</div>
+            <div class="mt-1"><i class="bi bi-telephone me-2"></i> +1 (555) 389-4921</div>
+            <div class="mt-1"><i class="bi bi-envelope me-2"></i> namaste@pranayoga.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Prana Yoga & Meditation Studio. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="documentation/index.html">Documentation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js?v=2.2"></script>
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>

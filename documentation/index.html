@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Prana Yoga & Meditation Studio HTML Template</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232F6A55'/><text x='50' y='62' font-size='38' text-anchor='middle' fill='%23ffffff' font-family='serif'>ॐ</text></svg>">
+
+    <!-- Pre-render Theme Initialization (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = (localStorage.getItem('prana-theme') || localStorage.getItem('stackly-theme'));
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+<!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/rtl.css?v=2.2">
+
+  <style>
+    .doc-sidebar {
+      position: sticky;
+      top: 100px;
+      height: calc(100vh - 120px);
+      overflow-y: auto;
+      padding-right: 15px;
+    }
+    .doc-nav-link {
+      display: block;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+      color: var(--color-black-soft);
+      border-radius: var(--border-radius);
+      margin-bottom: 4px;
+      text-decoration: none;
+    }
+    .doc-nav-link:hover, .doc-nav-link.active {
+      background-color: var(--color-primary-subtle);
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+    .code-block {
+      background: #141816;
+      color: #e5f1ec;
+      padding: 16px 20px;
+      border-radius: var(--border-radius);
+      font-family: monospace;
+      font-size: 0.88rem;
+      overflow-x: auto;
+      margin: 14px 0 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container-custom header-container">
+      <a href="../index.html" class="site-logo">
+        <span class="logo-icon"><i class="bi bi-flower1"></i></span>
+        PRANA<span>DOCS</span>
+      </a>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        <button type="button" class="rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+        <a href="../index.html" class="btn btn-outline-dark btn-sm"><i class="bi bi-eye"></i> View Website</a>
+        <a href="../member-dashboard/index.html" class="btn btn-outline-primary btn-sm">Member Portal</a>
+        <a href="../admin-dashboard/index.html" class="btn btn-primary btn-sm">Admin Portal</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-custom section-py">
+    <div class="row g-5">
+      <!-- Left Sidebar Nav -->
+      <div class="col-lg-3">
+        <nav class="doc-sidebar" aria-label="Documentation Index">
+          <div style="font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-primary); margin-bottom: 12px;">Documentation Index</div>
+          <a href="#quickstart" class="doc-nav-link active">1. Quick Start & Setup</a>
+          <a href="#structure" class="doc-nav-link">2. Project File Structure</a>
+          <a href="#colorsystem" class="doc-nav-link">3. Strict 3-Color System</a>
+          <a href="#typography" class="doc-nav-link">4. Strict 2-Font Rule</a>
+          <a href="#imageguide" class="doc-nav-link">5. Page Banner Images</a>
+          <a href="#bookingengine" class="doc-nav-link">6. Multi-Step Booking Flow</a>
+          <a href="#dashboards" class="doc-nav-link">7. Member & Admin Dashboards</a>
+          <a href="#darkrtl" class="doc-nav-link">8. Dark Mode & RTL Engine</a>
+          <a href="#backend" class="doc-nav-link">9. Backend Integration Guide</a>
+          <a href="#credits" class="doc-nav-link">10. Third-Party Credits</a>
+        </nav>
+      </div>
+
+      <!-- Main Docs Content -->
+      <div class="col-lg-9">
+        <div class="mb-5">
+          <span class="section-tag mb-2"><i class="bi bi-book"></i> Developer Guide</span>
+          <h1>Prana Yoga & Meditation Studio HTML Template</h1>
+          <p style="font-size: 1.15rem; color: var(--color-black-soft);">
+            A commercial-grade, multi-purpose HTML5/CSS3/ES6+ website template featuring 2 unique homepages, 10 yoga disciplines, a multi-step booking engine, member dashboard, and full admin management suite.
+          </p>
+        </div>
+
+        <!-- 1. Quick Start -->
+        <section id="quickstart" class="mb-5 pb-4 border-bottom">
+          <h3>1. Quick Start & Local Preview</h3>
+          <p>
+            Prana is a 100% dependency-free vanilla HTML5/CSS3/ES6+ template. No Node.js build steps, Webpack, or compilers are required. You can preview it immediately using any local web server or by opening <code>index.html</code> in any modern browser.
+          </p>
+          <div class="code-block">
+# Run with Python Built-in Server:
+python -m http.server 8000
+
+# Or with PHP:
+php -S localhost:8000
+
+# Or using VS Code Live Server extension:
+Right click 'index.html' -> Open with Live Server
+          </div>
+        </section>
+
+        <!-- 2. Project File Structure -->
+        <section id="structure" class="mb-5 pb-4 border-bottom">
+          <h3>2. Project File Structure</h3>
+          <p>The codebase is organized into clear directories:</p>
+          <div class="code-block">
+prana-yoga-template/
+├── index.html                   # Home 1: Main Studio Landing
+├── index-2.html                 # Home 2: Mindful Lifestyle & Sound
+├── about.html                   # Studio history, philosophy & facilities
+├── classes.html                 # 10 Yoga & meditation disciplines with filters
+├── class-details.html           # In-depth class syllabus, benefits & booking
+├── instructors.html             # Master teachers, bios & schedules
+├── membership.html              # Pricing tiers & comparison matrix
+├── schedule.html                # Interactive timetable & booking
+├── gallery.html                 # Studio photo gallery with lightbox modal
+├── blog.html                    # Mindful journal with search & categories
+├── blog-details.html            # Article content with takeaways & comments
+├── contact.html                 # Contact form, Google Maps frame & hours
+├── login.html                   # Member & Admin login with quick demo buttons
+├── register.html                # Registration with wellness preferences
+├── forgot-password.html         # Password recovery interface
+├── coming-soon.html             # Active countdown timer & notify form
+├── 404.html                     # Custom 404 error page
+│
+├── member-dashboard/            # Registered Member Portal
+│   ├── index.html               # Practice overview & next session
+│   ├── bookings.html            # Manage bookings, cancel & reschedule
+│   ├── class-history.html       # Completed classes & ratings
+│   ├── membership.html          # Plan details, renewal & guest passes
+│   ├── payments.html            # Transactions & PDF invoice download
+│   ├── profile.html             # Wellness profile & injuries notes
+│   └── settings.html            # Security, notifications & display
+│
+├── admin-dashboard/             # Studio Management Suite
+│   ├── index.html               # Operations overview & metrics
+│   ├── members.html             # Member directory & registration modal
+│   ├── classes.html             # Class disciplines & publish modal
+│   ├── instructors.html         # Teacher directory & add modal
+│   ├── schedules.html           # Weekly timetable & slot builder
+│   ├── bookings.html            # Roster & desk check-in toggle
+│   ├── memberships.html         # Tier pricing & subscriber analytics
+│   ├── payments.html            # Financial revenue ledger & CSV export
+│   ├── messages.html            # Website inquiries & quick reply
+│   ├── reports.html             # Retention & discipline occupancy
+│   └── settings.html            # Booking window & studio rules
+│
+├── assets/
+│   ├── css/                     # style.css, dark-mode.css, rtl.css, dashboard.css
+│   ├── js/                      # main.js, booking.js, dashboard.js, admin.js
+│   └── images/                  # page-banners/, classes/, instructors/, gallery/, blog/
+│
+├── documentation/               # Documentation manual
+├── sitemap.xml
+├── robots.txt
+└── README.md
+          </div>
+        </section>
+
+        <!-- 3. Strict 3-Color System -->
+        <section id="colorsystem" class="mb-5 pb-4 border-bottom">
+          <h3>3. Strict Three-Color Rule</h3>
+          <p>
+            The entire template strictly adheres to exactly three core brand colors:
+          </p>
+          <div class="row g-3 mb-3">
+            <div class="col-md-4">
+              <div style="background: #121614; color: #fff; padding: 20px; border-radius: 8px;">
+                <strong>1. Black (#121614)</strong>
+                <div style="font-size: 0.8rem; opacity: 0.8;">Primary text, contrast sections, dark mode surfaces.</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div style="background: #FFFFFF; color: #121614; border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
+                <strong>2. White (#FFFFFF)</strong>
+                <div style="font-size: 0.8rem; color: #666;">Clean light surfaces, cards, and text contrast.</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div style="background: #2F6A55; color: #fff; padding: 20px; border-radius: 8px;">
+                <strong>3. Sage Green (#2F6A55)</strong>
+                <div style="font-size: 0.8rem; opacity: 0.9;">Distinctive botanical brand accent color.</div>
+              </div>
+            </div>
+          </div>
+          <p>
+            All borders, hover effects, and tags use CSS variables with opacity tints derived exclusively from these three colors in <code>assets/css/style.css?v=2.2</code>:
+          </p>
+          <div class="code-block">
+:root {
+  --color-primary: #2F6A55;
+  --color-primary-dark: #235040;
+  --color-primary-light: #3e816a;
+  --color-primary-subtle: rgba(47, 106, 85, 0.08);
+  --color-black: #121614;
+  --color-white: #ffffff;
+}
+          </div>
+        </section>
+
+        <!-- 4. Strict 2-Font Rule -->
+        <section id="typography" class="mb-5 pb-4 border-bottom">
+          <h3>4. Strict Two-Font Rule</h3>
+          <p>Typography strictly uses two Google Fonts:</p>
+          <ul>
+            <li><strong>Headings & Titles:</strong> <code>Cormorant Garamond</code> (Serif, elegant, grounding)</li>
+            <li><strong>Body & Interface:</strong> <code>Plus Jakarta Sans</code> (Sans-serif, clean, ultra-readable)</li>
+          </ul>
+        </section>
+
+        <!-- 5. Page Banner Images -->
+        <section id="imageguide" class="mb-5 pb-4 border-bottom">
+          <h3>5. Page Banner Image Replacement Guide</h3>
+          <p>
+            Every inner page features a dedicated page banner referencing an exact image path with a readability overlay. To replace any banner, simply drop your JPEG into <code>assets/images/page-banners/</code> with the exact filename:
+          </p>
+          <div class="code-block">
+assets/images/page-banners/about-banner.jpg
+assets/images/page-banners/classes-banner.jpg
+assets/images/page-banners/class-details-banner.jpg
+assets/images/page-banners/instructors-banner.jpg
+assets/images/page-banners/membership-banner.jpg
+assets/images/page-banners/schedule-banner.jpg
+assets/images/page-banners/gallery-banner.jpg
+assets/images/page-banners/blog-banner.jpg
+assets/images/page-banners/blog-details-banner.jpg
+assets/images/page-banners/contact-banner.jpg
+          </div>
+        </section>
+
+        <!-- 6. Booking Engine -->
+        <section id="bookingengine" class="mb-5 pb-4 border-bottom">
+          <h3>6. Multi-Step Class Booking Workflow</h3>
+          <p>
+            The booking engine is implemented in <code>assets/js/booking.js</code>. Clicking any button with <code>data-trigger="book-class"</code> opens the interactive 6-step modal:
+          </p>
+          <ol>
+            <li><strong>Step 1:</strong> Select Class Discipline</li>
+            <li><strong>Step 2:</strong> Select Lead Teacher</li>
+            <li><strong>Step 3:</strong> Choose Session Date</li>
+            <li><strong>Step 4:</strong> Select Available Time Slot</li>
+            <li><strong>Step 5:</strong> Review Details & Membership Status</li>
+            <li><strong>Step 6:</strong> Confirmation with Reference ID & Calendar Export action</li>
+          </ol>
+        </section>
+
+        <!-- 7. Dashboards -->
+        <section id="dashboards" class="mb-5 pb-4 border-bottom">
+          <h3>7. Member & Admin Dashboards</h3>
+          <p>
+            The template provides two distinct dashboard ecosystems sharing the same styling:
+          </p>
+          <ul>
+            <li><strong>Member Portal (<code>member-dashboard/</code>):</strong> For registered students to book classes, view remaining credits, reschedule, cancel, manage memberships, and log wellness profiles.</li>
+            <li><strong>Admin Suite (<code>admin-dashboard/</code>):</strong> For studio owners and managers to monitor live rosters, perform front-desk check-in, update timetables, add members, publish classes, and export reports.</li>
+          </ul>
+        </section>
+
+        <!-- 8. Dark Mode & RTL -->
+        <section id="darkrtl" class="mb-5 pb-4 border-bottom">
+          <h3>8. Dark Mode & RTL Layout Engine</h3>
+          <p>
+            Both features are completely functional out-of-the-box and persist across page reloads via <code>localStorage</code>:
+          </p>
+          <ul>
+            <li><strong>Dark Mode:</strong> Toggled via the moon/sun button. Reads OS system preferences on first visit.</li>
+            <li><strong>RTL Mode:</strong> Toggled via the translate button. Flips layout, margins, and sidebars for Arabic and Hebrew without altering character directions.</li>
+          </ul>
+        </section>
+
+        <!-- 9. Backend Integration -->
+        <section id="backend" class="mb-5 pb-4 border-bottom">
+          <h3>9. Backend Integration Points</h3>
+          <p>
+            This static template is integration-ready. Connect with popular backend services:
+          </p>
+          <ul>
+            <li><strong>Contact & Newsletter Forms:</strong> Add <code>action="https://formspree.io/f/YOUR_FORM_ID" method="POST"</code> to forms.</li>
+            <li><strong>Stripe Checkout:</strong> Embed Stripe Elements or Stripe Checkout redirect in <code>membership.html</code>.</li>
+            <li><strong>Google Maps:</strong> Replace the iframe placeholder with your Google Maps Embed API key in <code>contact.html</code>.</li>
+          </ul>
+        </section>
+
+        <!-- 10. Credits -->
+        <section id="credits" class="mb-5">
+          <h3>10. Third-Party Resource Credits</h3>
+          <ul>
+            <li>Bootstrap 5.3.3 (Grid, Utilities & Base components)</li>
+            <li>Bootstrap Icons 1.11.3 (Icons)</li>
+            <li>Google Fonts: Cormorant Garamond & Plus Jakarta Sans</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container-custom text-center">
+      <p style="font-size: 0.88rem; margin: 0;">
+        &copy; 2026 Prana Yoga & Meditation Studio HTML Template. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js?v=2.2"></script>
+</body>
+</html>

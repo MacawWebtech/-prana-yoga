@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindful Journal & Articles — Prana Yoga Studio</title>
+  <meta name="description" content="Explore insights on breathwork science, sound healing, yogic philosophy, and daily mindfulness from the instructors at Prana Studio.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232F6A55'/><text x='50' y='62' font-size='38' text-anchor='middle' fill='%23ffffff' font-family='serif'>ॐ</text></svg>">
+
+    <!-- Pre-render Theme Initialization (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = (localStorage.getItem('prana-theme') || localStorage.getItem('stackly-theme'));
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+<!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=2.2">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container-custom header-container">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon"><i class="bi bi-flower1"></i></span>
+        PRANA<span>YOGA</span>
+      </a>
+
+      <nav class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home <i class="bi bi-chevron-down ms-1" style="font-size: 0.75rem;"></i></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html">Home 1 — Studio Main</a></li>
+            <li><a href="index-2.html">Home 2 — Mindful Lifestyle</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="classes.html" class="nav-link">Classes</a></li>
+        <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li class="nav-item"><a href="instructors.html" class="nav-link">Instructors</a></li>
+        <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        <button type="button" class="rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+        <a href="login.html" class="btn btn-outline-dark btn-sm header-cta-desktop"><i class="bi bi-person"></i> Account</a>
+        <button type="button" class="btn btn-primary btn-sm header-cta-desktop" data-trigger="book-class">Book a Class</button>
+        <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu"><i class="bi bi-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="site-logo">
+        <span class="logo-icon" style="width: 32px; height: 32px;"><i class="bi bi-flower1"></i></span>
+        PRANA<span>YOGA</span>
+      </div>
+      <button type="button" class="modal-close-btn mobile-nav-close" aria-label="Close Mobile Menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home 1 — Studio Main</a></li>
+      <li><a href="index-2.html">Home 2 — Mindful Lifestyle</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="schedule.html">Schedule & Booking</a></li>
+      <li><a href="instructors.html">Instructors</a></li>
+      <li><a href="membership.html">Membership Plans</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Studio Gallery</a></li>
+      <li><a href="blog.html" class="active">Wellness Blog</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="member-dashboard/index.html">Member Dashboard</a></li>
+      <li><a href="admin-dashboard/index.html">Admin Dashboard</a></li>
+    </ul>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+      <button type="button" class="btn btn-primary w-100" data-trigger="book-class">Book a Class</button>
+      <a href="login.html" class="btn btn-outline-dark w-100">Member Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Page Banner with exact path: assets/images/page-banners/blog-banner.jpg -->
+    <section class="page-banner" style="background-image: url('assets/images/page-banners/blog-banner.jpg');">
+      <div class="page-banner-overlay"></div>
+      <div class="container-custom">
+        <span class="section-tag mb-2"><i class="bi bi-journal-text"></i> Mindful Perspectives</span>
+        <h1>The Studio Journal</h1>
+        <p>Essays on yogic philosophy, nervous system science, acoustic resonance, and mindful contemplation.</p>
+        <ul class="breadcrumb-custom">
+          <li><a href="index.html">Home</a></li>
+          <li class="separator">/</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Main Blog Section with Sidebar -->
+    <section class="section-py">
+      <div class="container-custom">
+        <div class="row g-5">
+
+          <!-- Left Column: Articles Grid & Featured Post -->
+          <div class="col-lg-8">
+
+            <!-- Featured Article Hero Card -->
+            <div class="studio-card mb-5 overflow-hidden">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-6">
+                  <div style="aspect-ratio: 4/3; overflow: hidden; background: #000;">
+                    <img src="assets/images/blog/blog-1.jpg" alt="Featured Article" style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-4 p-lg-5">
+                    <span class="badge-custom mb-2">Featured Essay</span>
+                    <div class="class-meta mb-2">
+                      <span><i class="bi bi-calendar"></i> Nov 10, 2026</span>
+                      <span><i class="bi bi-clock"></i> 6 min read</span>
+                    </div>
+                    <h3><a href="blog-details.html" style="color: inherit;">The Science of Sound: How 432Hz Frequencies Reset the Nervous System</a></h3>
+                    <p style="font-size: 0.92rem; color: var(--color-black-soft); margin-bottom: 20px;">
+                      An exploration of how acoustic sound bowls down-regulate sympathetic fight-or-flight signaling into restorative theta states.
+                    </p>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                      <div style="display: flex; align-items: center; gap: 8px;">
+                        <img src="assets/images/instructors/marcus-vance.jpg" alt="Marcus Vance" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">
+                        <small style="font-weight: 600;">Marcus Vance</small>
+                      </div>
+                      <a href="blog-details.html" class="btn btn-outline-primary btn-sm">Read Essay <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Articles Grid (Equal Height Cards) -->
+            <div class="row g-4 equal-height-grid mb-5">
+
+              <!-- Article 2 -->
+              <div class="col-md-6">
+                <div class="studio-card card-equal">
+                  <div>
+                    <div class="card-img-wrapper">
+                      <img src="assets/images/blog/blog-2.jpg" alt="Pranayama Breathwork" loading="lazy">
+                      <span class="badge-custom card-img-badge">Breathwork</span>
+                    </div>
+                    <div class="card-body-custom">
+                      <div class="class-meta">
+                        <span><i class="bi bi-calendar"></i> Nov 05, 2026</span>
+                        <span><i class="bi bi-clock"></i> 4 min read</span>
+                      </div>
+                      <h4><a href="blog-details.html" style="color: inherit;">Why Ujjayi Breath is Essential in Dynamic Vinyasa</a></h4>
+                      <p style="font-size: 0.88rem; color: var(--color-black-soft);">
+                        Discover how the slight constriction of the glottis builds internal warmth, maintains steady pacing, and focuses mental attention.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-body-custom pt-0" style="border-top: 1px solid var(--color-border-subtle); margin-top: auto;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+                      <small style="font-weight: 600; color: var(--color-black-muted);">By Elena Rostova</small>
+                      <a href="blog-details.html" style="font-weight: 600; font-size: 0.85rem;">Read More &rarr;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Article 3 -->
+              <div class="col-md-6">
+                <div class="studio-card card-equal">
+                  <div>
+                    <div class="card-img-wrapper">
+                      <img src="assets/images/blog/blog-3.jpg" alt="Fascia & Yin Yoga" loading="lazy">
+                      <span class="badge-custom card-img-badge">Yin Science</span>
+                    </div>
+                    <div class="card-body-custom">
+                      <div class="class-meta">
+                        <span><i class="bi bi-calendar"></i> Oct 28, 2026</span>
+                        <span><i class="bi bi-clock"></i> 5 min read</span>
+                      </div>
+                      <h4><a href="blog-details.html" style="color: inherit;">Unwinding Somatic Armor: What Fascia Tells Us</a></h4>
+                      <p style="font-size: 0.88rem; color: var(--color-black-soft);">
+                        Connective tissue stores emotional tension. Learn why 5-minute passive yin postures liberate deep-seated somatic contractions.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-body-custom pt-0" style="border-top: 1px solid var(--color-border-subtle); margin-top: auto;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+                      <small style="font-weight: 600; color: var(--color-black-muted);">By David Chen</small>
+                      <a href="blog-details.html" style="font-weight: 600; font-size: 0.85rem;">Read More &rarr;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Article 4 -->
+              <div class="col-md-6">
+                <div class="studio-card card-equal">
+                  <div>
+                    <div class="card-img-wrapper">
+                      <img src="assets/images/blog/blog-4.jpg" alt="Morning Tea Rituals" loading="lazy">
+                      <span class="badge-custom card-img-badge">Lifestyle</span>
+                    </div>
+                    <div class="card-body-custom">
+                      <div class="class-meta">
+                        <span><i class="bi bi-calendar"></i> Oct 20, 2026</span>
+                        <span><i class="bi bi-clock"></i> 3 min read</span>
+                      </div>
+                      <h4><a href="blog-details.html" style="color: inherit;">The Morning Tea Ritual: Grounding Before the World Awakes</a></h4>
+                      <p style="font-size: 0.88rem; color: var(--color-black-soft);">
+                        A simple 10-minute contemplative tea protocol using Ayurvedic herbs and silence to cultivate steady daily presence.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-body-custom pt-0" style="border-top: 1px solid var(--color-border-subtle); margin-top: auto;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+                      <small style="font-weight: 600; color: var(--color-black-muted);">By Priya Sharma</small>
+                      <a href="blog-details.html" style="font-weight: 600; font-size: 0.85rem;">Read More &rarr;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Article 5 -->
+              <div class="col-md-6">
+                <div class="studio-card card-equal">
+                  <div>
+                    <div class="card-img-wrapper">
+                      <img src="assets/images/blog/blog-5.jpg" alt="Ashtanga Philosophy" loading="lazy">
+                      <span class="badge-custom card-img-badge">Philosophy</span>
+                    </div>
+                    <div class="card-body-custom">
+                      <div class="class-meta">
+                        <span><i class="bi bi-calendar"></i> Oct 12, 2026</span>
+                        <span><i class="bi bi-clock"></i> 7 min read</span>
+                      </div>
+                      <h4><a href="blog-details.html" style="color: inherit;">Beyond the Asana: Exploring the 8 Limbs of Patanjali</a></h4>
+                      <p style="font-size: 0.88rem; color: var(--color-black-soft);">
+                        How Yamas and Niyamas guide ethical conduct, mental tranquility, and freedom from constant distraction in daily modern life.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-body-custom pt-0" style="border-top: 1px solid var(--color-border-subtle); margin-top: auto;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+                      <small style="font-weight: 600; color: var(--color-black-muted);">By Arjun Mehta</small>
+                      <a href="blog-details.html" style="font-weight: 600; font-size: 0.85rem;">Read More &rarr;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div style="display: flex; justify-content: center; gap: 8px;">
+              <span class="btn btn-primary btn-sm" style="min-width: 40px; padding: 0 12px;">1</span>
+              <a href="#" class="btn btn-outline-dark btn-sm" style="min-width: 40px; padding: 0 12px;">2</a>
+              <a href="#" class="btn btn-outline-dark btn-sm" style="min-width: 40px; padding: 0 12px;">Next &rarr;</a>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Sidebar -->
+          <div class="col-lg-4">
+            <aside class="blog-sidebar">
+              <!-- Search Widget -->
+              <div class="sidebar-widget">
+                <h5 class="sidebar-title">Search Journal</h5>
+                <form onsubmit="event.preventDefault(); window.showToast('Searching articles matching query...');">
+                  <div style="position: relative;">
+                    <input type="text" class="form-control" placeholder="Search keywords..." required>
+                    <button type="submit" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--color-primary); cursor: pointer;">
+                      <i class="bi bi-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Categories Widget -->
+              <div class="sidebar-widget">
+                <h5 class="sidebar-title">Journal Categories</h5>
+                <ul class="blog-category-list">
+                  <li><a href="#"><span>Sound & Vibration Therapy</span> <span class="badge-custom">12</span></a></li>
+                  <li><a href="#"><span>Breathwork & Pranayama</span> <span class="badge-custom">18</span></a></li>
+                  <li><a href="#"><span>Somatic Movement & Alignment</span> <span class="badge-custom">24</span></a></li>
+                  <li><a href="#"><span>Yogic Philosophy & Texts</span> <span class="badge-custom">9</span></a></li>
+                  <li><a href="#"><span>Ayurveda & Lifestyle</span> <span class="badge-custom">15</span></a></li>
+                  <li><a href="#"><span>Student Transformation Stories</span> <span class="badge-custom">8</span></a></li>
+                </ul>
+              </div>
+
+              <!-- Popular / Recent Posts Widget -->
+              <div class="sidebar-widget">
+                <h5 class="sidebar-title">Popular Reads</h5>
+                <div class="recent-post-item">
+                  <img src="assets/images/blog/blog-1.jpg" alt="Sound therapy" class="recent-post-thumb">
+                  <div class="recent-post-info">
+                    <h6><a href="blog-details.html">The Science of Sound & 432Hz Reset</a></h6>
+                    <small>Nov 10, 2026</small>
+                  </div>
+                </div>
+
+                <div class="recent-post-item">
+                  <img src="assets/images/blog/blog-2.jpg" alt="Breathwork" class="recent-post-thumb">
+                  <div class="recent-post-info">
+                    <h6><a href="blog-details.html">Why Ujjayi Breath is Essential in Vinyasa</a></h6>
+                    <small>Nov 05, 2026</small>
+                  </div>
+                </div>
+
+                <div class="recent-post-item">
+                  <img src="assets/images/blog/blog-3.jpg" alt="Fascia" class="recent-post-thumb">
+                  <div class="recent-post-info">
+                    <h6><a href="blog-details.html">Unwinding Somatic Armor: What Fascia Tells Us</a></h6>
+                    <small>Oct 28, 2026</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Newsletter Widget in Sidebar -->
+              <div class="sidebar-widget" style="background-color: var(--color-surface-tint); padding: 24px; border-radius: var(--border-radius); border: 1px solid var(--color-border);">
+                <h5 style="margin-bottom: 8px;">Mindful Weekly Notes</h5>
+                <p style="font-size: 0.85rem; color: var(--color-black-soft); margin-bottom: 14px;">
+                  Receive our Sunday morning meditation essays and audio breathwork prompts directly.
+                </p>
+                <form data-validate="true" data-success-message="Thank you for subscribing!">
+                  <input type="email" class="form-control form-control-sm mb-2" placeholder="Your email address" required>
+                  <button type="submit" class="btn btn-primary btn-sm w-100">Subscribe Free</button>
+                </form>
+              </div>
+            </aside>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container-custom">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="site-logo mb-3" style="color: #fff;">
+            <span class="logo-icon"><i class="bi bi-flower1"></i></span>
+            PRANA<span>YOGA</span>
+          </div>
+          <p style="font-size: 0.92rem; color: rgba(255, 255, 255, 0.7); max-width: 320px; margin-bottom: 20px;">
+            A sanctuary devoted to traditional yogic alignment, acoustic meditation, and holistic mindfulness in our urban oasis.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Philosophy</a></li>
+            <li><a href="classes.html">All Classes</a></li>
+            <li><a href="instructors.html">Our Teachers</a></li>
+            <li><a href="schedule.html">Class Schedule</a></li>
+            <li><a href="membership.html">Memberships</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <h5>Dashboards & Portals</h5>
+          <ul class="footer-links">
+            <li><a href="member-dashboard/index.html">Member Portal</a></li>
+            <li><a href="member-dashboard/bookings.html">My Bookings</a></li>
+            <li><a href="admin-dashboard/index.html">Admin Dashboard</a></li>
+            <li><a href="login.html">Sign In / Register</a></li>
+            <li><a href="coming-soon.html">Upcoming Retreats</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h5>Sanctuary Hours</h5>
+          <p style="font-size: 0.88rem; margin-bottom: 6px;">Monday – Friday: 06:30 AM – 08:30 PM</p>
+          <p style="font-size: 0.88rem; margin-bottom: 16px;">Saturday – Sunday: 07:30 AM – 06:00 PM</p>
+          <div style="font-size: 0.88rem; color: rgba(255, 255, 255, 0.75);">
+            <div><i class="bi bi-geo-alt me-2"></i> 742 Evergreen Lotus Sanctuary</div>
+            <div class="mt-1"><i class="bi bi-telephone me-2"></i> +1 (555) 389-4921</div>
+            <div class="mt-1"><i class="bi bi-envelope me-2"></i> namaste@pranayoga.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Prana Yoga & Meditation Studio. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="documentation/index.html">Documentation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js?v=2.2"></script>
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>

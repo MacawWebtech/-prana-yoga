@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Studio Management — Prana Yoga Studio</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232F6A55'/><text x='50' y='62' font-size='38' text-anchor='middle' fill='%23ffffff' font-family='serif'>ॐ</text></svg>">
+
+    <!-- Pre-render Theme Initialization (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = (localStorage.getItem('prana-theme') || localStorage.getItem('stackly-theme'));
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+<!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/rtl.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- Admin Sidebar -->
+    <aside class="dashboard-sidebar" aria-label="Admin Navigation">
+      <div class="sidebar-brand">
+        <a href="index.html" class="logo-text">
+          <span class="logo-icon" style="width: 32px; height: 32px; font-size: 1.1rem;"><i class="bi bi-shield-lock"></i></span>
+          <span class="brand-name">PRANA<span>ADMIN</span></span>
+        </a>
+      </div>
+
+      <div class="sidebar-menu-wrapper">
+        <div class="sidebar-section-title">Studio Management</div>
+        <ul class="sidebar-menu">
+          <li><a href="index.html" class="dash-nav-link active"><i class="bi bi-speedometer2"></i><span>Overview</span></a></li>
+          <li><a href="members.html" class="dash-nav-link"><i class="bi bi-people"></i><span>Members</span></a></li>
+          <li><a href="classes.html" class="dash-nav-link"><i class="bi bi-card-checklist"></i><span>Classes & Styles</span></a></li>
+          <li><a href="instructors.html" class="dash-nav-link"><i class="bi bi-person-badge"></i><span>Instructors</span></a></li>
+          <li><a href="schedules.html" class="dash-nav-link"><i class="bi bi-calendar-week"></i><span>Class Schedules</span></a></li>
+          <li><a href="bookings.html" class="dash-nav-link"><i class="bi bi-journal-check"></i><span>All Bookings</span></a></li>
+          <li><a href="memberships.html" class="dash-nav-link"><i class="bi bi-gem"></i><span>Membership Plans</span></a></li>
+          <li><a href="payments.html" class="dash-nav-link"><i class="bi bi-cash-stack"></i><span>Payments & Revenue</span></a></li>
+          <li><a href="messages.html" class="dash-nav-link"><i class="bi bi-chat-left-text"></i><span>Messages & Inquiries</span></a></li>
+          <li><a href="reports.html" class="dash-nav-link"><i class="bi bi-bar-chart-line"></i><span>Reports & Analytics</span></a></li>
+          <li><a href="settings.html" class="dash-nav-link"><i class="bi bi-sliders"></i><span>Studio Settings</span></a></li>
+        </ul>
+
+        <div class="sidebar-section-title">Studio Site</div>
+        <ul class="sidebar-menu">
+          <li><a href="../index.html" class="dash-nav-link"><i class="bi bi-arrow-up-right-square"></i><span>View Public Website</span></a></li>
+          <li><a href="../member-dashboard/index.html" class="dash-nav-link"><i class="bi bi-person"></i><span>View Member Portal</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="../login.html" class="dash-nav-link text-danger" style="color: #b33939 !important;">
+          <i class="bi bi-box-arrow-left"></i><span>Log Out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn"><i class="bi bi-list"></i></button>
+          <div style="font-size: 0.95rem; font-weight: 600; color: var(--color-black);">
+            Admin Control Center &nbsp;|&nbsp; <span style="color: var(--color-primary); font-weight: 500;">Lotus Sanctuary HQ</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button type="button" class="theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button type="button" class="rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+
+          <!-- Notifications -->
+          <div class="dropdown-custom">
+            <button type="button" class="notification-btn dropdown-toggle-custom" aria-label="Admin Notifications" title="Notifications">
+              <i class="bi bi-bell"></i>
+              <span class="notification-badge"></span>
+            </button>
+            <div class="dropdown-menu-custom" style="width: 300px; padding: 14px;">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <strong style="font-size: 0.88rem;">Studio Alerts</strong>
+                <span class="badge-custom">3 New</span>
+              </div>
+              <div style="font-size: 0.82rem; border-bottom: 1px solid var(--color-border-subtle); padding: 8px 0;">
+                <i class="bi bi-person-plus text-primary me-1"></i> <strong>New Member:</strong> Samantha K. joined Unlimited.
+              </div>
+              <div style="font-size: 0.82rem; border-bottom: 1px solid var(--color-border-subtle); padding: 8px 0;">
+                <i class="bi bi-exclamation-circle text-primary me-1"></i> <strong>Full Session:</strong> Friday Sound Bath (16/16).
+              </div>
+              <div style="font-size: 0.82rem; padding: 8px 0;">
+                <i class="bi bi-envelope text-primary me-1"></i> <strong>Inquiry:</strong> Corporate retreat quote requested.
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile -->
+          <div class="dropdown-custom">
+            <button type="button" class="dropdown-toggle-custom">
+              <span style="width: 36px; height: 36px; border-radius: 50%; background-color: var(--color-primary); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-weight: 700;">AD</span>
+              <span class="d-none d-md-inline" style="font-size: 0.88rem; font-weight: 600; color: var(--color-black);">Director Admin</span>
+            </button>
+            <ul class="dropdown-menu-custom">
+              <li><a href="settings.html"><i class="bi bi-sliders"></i> Settings</a></li>
+              <li><a href="../login.html"><i class="bi bi-box-arrow-left"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+          <div>
+            <h2 style="font-size: 1.8rem; margin-bottom: 4px;">Studio Operations Overview</h2>
+            <p style="font-size: 0.9rem; color: var(--color-black-muted); margin: 0;">Live daily attendance, revenue performance, and membership health.</p>
+          </div>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-dark btn-sm" data-action="export-csv" data-export-name="studio_overview">
+              <i class="bi bi-download me-1"></i> Export Daily Report
+            </button>
+            <a href="bookings.html" class="btn btn-primary btn-sm">
+              <i class="bi bi-journal-check me-1"></i> Manage Bookings
+            </a>
+          </div>
+        </div>
+
+        <!-- 4 Top KPI Stat Cards -->
+        <div class="row g-4 mb-4">
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <div class="stat-info">
+                <h3>1,280</h3>
+                <p>Total Registered Members</p>
+              </div>
+              <div class="stat-icon"><i class="bi bi-people"></i></div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <div class="stat-info">
+                <h3>942</h3>
+                <p>Active Paying Members</p>
+              </div>
+              <div class="stat-icon"><i class="bi bi-gem"></i></div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <div class="stat-info">
+                <h3>86 Mats</h3>
+                <p>Today's Total Bookings</p>
+              </div>
+              <div class="stat-icon"><i class="bi bi-calendar-check"></i></div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xl-3">
+            <div class="stat-card">
+              <div class="stat-info">
+                <h3>$48,250</h3>
+                <p>Monthly Studio Revenue</p>
+              </div>
+              <div class="stat-icon"><i class="bi bi-cash-coin"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two Columns: Today's Class Schedule & Recent Transactions -->
+        <div class="row g-4 mb-4">
+          <!-- Today's Classes Capacity -->
+          <div class="col-lg-7">
+            <div class="dashboard-card h-100">
+              <div class="dashboard-card-header">
+                <h3 class="dashboard-card-title">Today's Class Schedule & Capacity</h3>
+                <a href="schedules.html" class="btn btn-outline-dark btn-sm">Manage Timetable</a>
+              </div>
+
+              <div class="table-responsive-custom">
+                <table class="table-custom">
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Class Session</th>
+                      <th>Instructor</th>
+                      <th>Studio</th>
+                      <th>Booked / Capacity</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>07:00 AM</strong></td>
+                      <td>Solar Vinyasa Flow</td>
+                      <td>Elena Rostova</td>
+                      <td>Sun Sanctuary A</td>
+                      <td>
+                        <span class="badge-custom">12 / 16 (75%)</span>
+                      </td>
+                      <td><a href="bookings.html" class="btn btn-outline-dark btn-sm">Roster</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>10:30 AM</strong></td>
+                      <td>Hatha Foundation</td>
+                      <td>Priya Sharma</td>
+                      <td>Earth Sanctuary B</td>
+                      <td>
+                        <span class="badge-custom">9 / 16 (56%)</span>
+                      </td>
+                      <td><a href="bookings.html" class="btn btn-outline-dark btn-sm">Roster</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>05:30 PM</strong></td>
+                      <td>Fluid Evening Vinyasa</td>
+                      <td>Elena Rostova</td>
+                      <td>Sun Sanctuary A</td>
+                      <td>
+                        <span class="badge-custom">14 / 16 (88%)</span>
+                      </td>
+                      <td><a href="bookings.html" class="btn btn-outline-dark btn-sm">Roster</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>07:00 PM</strong></td>
+                      <td>Yin Sanctuary & Candlelight</td>
+                      <td>David Chen</td>
+                      <td>Earth Sanctuary B</td>
+                      <td>
+                        <span class="badge-custom">12 / 16 (75%)</span>
+                      </td>
+                      <td><a href="bookings.html" class="btn btn-outline-dark btn-sm">Roster</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>08:30 PM</strong></td>
+                      <td>Full Moon Crystal Sound Bath</td>
+                      <td>Marcus Vance</td>
+                      <td>Sun Sanctuary A</td>
+                      <td>
+                        <span class="status-pill status-confirmed">16 / 16 (Full)</span>
+                      </td>
+                      <td><a href="bookings.html" class="btn btn-outline-dark btn-sm">Roster</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions & Pending Inquiries -->
+          <div class="col-lg-5">
+            <div class="dashboard-card mb-4">
+              <h4 style="font-size: 1.2rem; margin-bottom: 14px;">Quick Management Shortcuts</h4>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="members.html" class="btn btn-outline-dark btn-sm"><i class="bi bi-person-plus me-1"></i> Add Member</a>
+                <a href="classes.html" class="btn btn-outline-dark btn-sm"><i class="bi bi-plus-circle me-1"></i> Add New Class</a>
+                <a href="schedules.html" class="btn btn-outline-dark btn-sm"><i class="bi bi-calendar-plus me-1"></i> Add Schedule Slot</a>
+                <a href="messages.html" class="btn btn-outline-dark btn-sm"><i class="bi bi-inbox me-1"></i> View Inquiries (4)</a>
+              </div>
+            </div>
+
+            <!-- Pending Enquiries Teaser -->
+            <div class="dashboard-card">
+              <div class="dashboard-card-header">
+                <h4 style="font-size: 1.2rem; margin: 0;">Pending Contact Enquiries</h4>
+                <a href="messages.html" style="font-size: 0.85rem; font-weight: 600;">View All</a>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.88rem;">
+                <div style="padding: 10px; border-radius: var(--border-radius); background: var(--color-surface-tint); border: 1px solid var(--color-border-subtle);">
+                  <div class="d-flex justify-content-between mb-1">
+                    <strong>Samantha Kane</strong>
+                    <small style="color: var(--color-black-muted);">2h ago</small>
+                  </div>
+                  <p style="font-size: 0.82rem; margin: 0; color: var(--color-black-soft);">"Inquiring about private corporate sound bath for 12 colleagues next month."</p>
+                </div>
+                <div style="padding: 10px; border-radius: var(--border-radius); background: var(--color-surface-tint); border: 1px solid var(--color-border-subtle);">
+                  <div class="d-flex justify-content-between mb-1">
+                    <strong>Julian Lowe</strong>
+                    <small style="color: var(--color-black-muted);">5h ago</small>
+                  </div>
+                  <p style="font-size: 0.82rem; margin: 0; color: var(--color-black-soft);">"Can I freeze my Unlimited membership while traveling for 3 weeks in Europe?"</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Studio Transactions Table -->
+        <div class="dashboard-card">
+          <div class="dashboard-card-header">
+            <h3 class="dashboard-card-title">Recent Transactions & Revenue</h3>
+            <a href="payments.html" class="btn btn-outline-dark btn-sm">Full Transaction Ledger</a>
+          </div>
+
+          <div class="table-responsive-custom">
+            <table class="table-custom">
+              <thead>
+                <tr>
+                  <th>Transaction ID</th>
+                  <th>Member Name</th>
+                  <th>Package / Plan</th>
+                  <th>Amount</th>
+                  <th>Date & Time</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>TXN-98421</strong></td>
+                  <td>Samantha Kane</td>
+                  <td>Unlimited Sanctuary Pass (Monthly)</td>
+                  <td>$165.00</td>
+                  <td>Today, 11:20 AM</td>
+                  <td><span class="status-pill status-completed">Success</span></td>
+                </tr>
+                <tr>
+                  <td><strong>TXN-98420</strong></td>
+                  <td>Michael Davies</td>
+                  <td>10-Class Package</td>
+                  <td>$180.00</td>
+                  <td>Today, 09:45 AM</td>
+                  <td><span class="status-pill status-completed">Success</span></td>
+                </tr>
+                <tr>
+                  <td><strong>TXN-98419</strong></td>
+                  <td>Aria Robinson</td>
+                  <td>Drop-In Session</td>
+                  <td>$25.00</td>
+                  <td>Today, 08:12 AM</td>
+                  <td><span class="status-pill status-completed">Success</span></td>
+                </tr>
+                <tr>
+                  <td><strong>TXN-98418</strong></td>
+                  <td>Dr. Lisa Sterling</td>
+                  <td>Annual Devotion Pass</td>
+                  <td>$1,650.00</td>
+                  <td>Yesterday, 04:30 PM</td>
+                  <td><span class="status-pill status-completed">Success</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js?v=2.2"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>

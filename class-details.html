@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinyasa Flow Details — Prana Yoga Studio</title>
+  <meta name="description" content="Discover session details, benefits, instructor qualifications, and schedule for Vinyasa Flow at Prana Yoga & Meditation Studio.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232F6A55'/><text x='50' y='62' font-size='38' text-anchor='middle' fill='%23ffffff' font-family='serif'>ॐ</text></svg>">
+
+    <!-- Pre-render Theme Initialization (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = (localStorage.getItem('prana-theme') || localStorage.getItem('stackly-theme'));
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+<!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=2.2">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container-custom header-container">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon"><i class="bi bi-flower1"></i></span>
+        PRANA<span>YOGA</span>
+      </a>
+
+      <nav class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home <i class="bi bi-chevron-down ms-1" style="font-size: 0.75rem;"></i></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html">Home 1 — Studio Main</a></li>
+            <li><a href="index-2.html">Home 2 — Mindful Lifestyle</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="classes.html" class="nav-link active">Classes</a></li>
+        <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li class="nav-item"><a href="instructors.html" class="nav-link">Instructors</a></li>
+        <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        <button type="button" class="rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+        <a href="login.html" class="btn btn-outline-dark btn-sm header-cta-desktop"><i class="bi bi-person"></i> Account</a>
+        <button type="button" class="btn btn-primary btn-sm header-cta-desktop" data-trigger="book-class">Book a Class</button>
+        <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu"><i class="bi bi-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="site-logo">
+        <span class="logo-icon" style="width: 32px; height: 32px;"><i class="bi bi-flower1"></i></span>
+        PRANA<span>YOGA</span>
+      </div>
+      <button type="button" class="modal-close-btn mobile-nav-close" aria-label="Close Mobile Menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home 1 — Studio Main</a></li>
+      <li><a href="index-2.html">Home 2 — Mindful Lifestyle</a></li>
+      <li><a href="classes.html" class="active">Classes</a></li>
+      <li><a href="schedule.html">Schedule & Booking</a></li>
+      <li><a href="instructors.html">Instructors</a></li>
+      <li><a href="membership.html">Membership Plans</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Studio Gallery</a></li>
+      <li><a href="blog.html">Wellness Blog</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="member-dashboard/index.html">Member Dashboard</a></li>
+      <li><a href="admin-dashboard/index.html">Admin Dashboard</a></li>
+    </ul>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+      <button type="button" class="btn btn-primary w-100" data-trigger="book-class">Book a Class</button>
+      <a href="login.html" class="btn btn-outline-dark w-100">Member Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Page Banner with exact path: assets/images/page-banners/class-details-banner.jpg -->
+    <section class="page-banner" style="background-image: url('assets/images/page-banners/class-details-banner.jpg');">
+      <div class="page-banner-overlay"></div>
+      <div class="container-custom">
+        <span class="section-tag mb-2"><i class="bi bi-flower1"></i> Class Syllabus</span>
+        <h1>Vinyasa Flow & Dynamic Breath</h1>
+        <p>A transformative moving meditation harmonizing fluid transitions, cardiovascular vitality, and inner stillness.</p>
+        <ul class="breadcrumb-custom">
+          <li><a href="index.html">Home</a></li>
+          <li class="separator">/</li>
+          <li><a href="classes.html">Classes</a></li>
+          <li class="separator">/</li>
+          <li>Vinyasa Flow</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Class Details Main Content -->
+    <section class="section-py">
+      <div class="container-custom">
+        <div class="row g-5">
+          <!-- Left Column: Syllabus, Benefits, What to Bring, FAQs -->
+          <div class="col-lg-8">
+            <div style="border-radius: var(--border-radius-lg); overflow: hidden; border: 1px solid var(--color-border); margin-bottom: 32px;">
+              <img src="assets/images/classes/vinyasa-flow.jpg" alt="Vinyasa Flow in Studio" style="width: 100%; height: auto;">
+            </div>
+
+            <span class="section-tag"><i class="bi bi-info-circle"></i> Class Overview</span>
+            <h2 class="mb-3">The Art of Breath-Synchronized Fluid Movement</h2>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--color-black-soft); margin-bottom: 24px;">
+              Vinyasa Flow is rooted in the Sanskrit term <em>nyasa</em>, meaning "to place with mindful intention." In this dynamic class, each breath corresponds to a specific movement: an inhalation expands and opens the chest, while an exhalation grounds and contracts the core. Our teachers craft intelligent progressive arcs that warm the muscular tissues safely before moving into standing balances, graceful binds, gentle backbends, and settling into cooling seated hip releases.
+            </p>
+
+            <!-- Key Benefits Grid -->
+            <h3 class="mt-4 mb-3">Health & Mental Benefits</h3>
+            <div class="row g-3 mb-5">
+              <div class="col-sm-6">
+                <div style="background-color: var(--color-surface-tint); padding: 18px; border-radius: var(--border-radius); border: 1px solid var(--color-border);">
+                  <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 8px;">
+                    <i class="bi bi-heart-pulse text-primary" style="font-size: 1.3rem; color: var(--color-primary) !important;"></i>
+                    <h5 style="margin: 0; font-size: 1.05rem;">Cardiovascular Stamina</h5>
+                  </div>
+                  <p style="font-size: 0.88rem; color: var(--color-black-soft); margin: 0;">Continuous flowing transitions elevate steady heart rate without joint-pounding impact.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div style="background-color: var(--color-surface-tint); padding: 18px; border-radius: var(--border-radius); border: 1px solid var(--color-border);">
+                  <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 8px;">
+                    <i class="bi bi-shield-check text-primary" style="font-size: 1.3rem; color: var(--color-primary) !important;"></i>
+                    <h5 style="margin: 0; font-size: 1.05rem;">Spinal Decompression</h5>
+                  </div>
+                  <p style="font-size: 0.88rem; color: var(--color-black-soft); margin: 0;">Safe multi-planar rotation and elongation releasing lower back and sacral tension.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div style="background-color: var(--color-surface-tint); padding: 18px; border-radius: var(--border-radius); border: 1px solid var(--color-border);">
+                  <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 8px;">
+                    <i class="bi bi-eye text-primary" style="font-size: 1.3rem; color: var(--color-primary) !important;"></i>
+                    <h5 style="margin: 0; font-size: 1.05rem;">Cognitive Calm & Drishti</h5>
+                  </div>
+                  <p style="font-size: 0.88rem; color: var(--color-black-soft); margin: 0;">Focused visual gazing points train neural attention and diminish overthinking.</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div style="background-color: var(--color-surface-tint); padding: 18px; border-radius: var(--border-radius); border: 1px solid var(--color-border);">
+                  <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 8px;">
+                    <i class="bi bi-wind text-primary" style="font-size: 1.3rem; color: var(--color-primary) !important;"></i>
+                    <h5 style="margin: 0; font-size: 1.05rem;">Ujjayi Breath Mastery</h5>
+                  </div>
+                  <p style="font-size: 0.88rem; color: var(--color-black-soft); margin: 0;">Ocean-sounding throat resonance that activates the vagus nerve to decrease cortisol.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- What to Bring & Studio Etiquette -->
+            <h3 class="mb-3">What to Bring & Sanctuary Etiquette</h3>
+            <div style="background-color: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); padding: 24px; margin-bottom: 40px;">
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 0;">
+                <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.94rem;">
+                  <i class="bi bi-check2-circle text-primary" style="color: var(--color-primary) !important; font-size: 1.2rem;"></i>
+                  <span><strong>Comfortable Athletic Wear:</strong> Form-fitting or breathable apparel that allows full range of motion.</span>
+                </li>
+                <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.94rem;">
+                  <i class="bi bi-check2-circle text-primary" style="color: var(--color-primary) !important; font-size: 1.2rem;"></i>
+                  <span><strong>Hydration:</strong> Bring a refillable container. Studio provides complimentary filtered alkaline spring water.</span>
+                </li>
+                <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.94rem;">
+                  <i class="bi bi-check2-circle text-primary" style="color: var(--color-primary) !important; font-size: 1.2rem;"></i>
+                  <span><strong>Mats & Props:</strong> Manduka Pro mats and organic cork props are complimentary; you are also welcome to bring your own.</span>
+                </li>
+                <li style="display: flex; gap: 12px; align-items: flex-start; font-size: 0.94rem;">
+                  <i class="bi bi-check2-circle text-primary" style="color: var(--color-primary) !important; font-size: 1.2rem;"></i>
+                  <span><strong>Arrival Window:</strong> Doors open 15 minutes before session. To preserve studio quietude, late arrivals are not permitted once practice starts.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Class FAQs -->
+            <h3 class="mb-3">Frequently Asked Questions</h3>
+            <div class="accordion-custom mb-5">
+              <div class="accordion-item-custom active">
+                <div class="accordion-header-custom">
+                  <span>Is Vinyasa Flow suitable for absolute beginners?</span>
+                  <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="accordion-body-custom">
+                  Yes. While Vinyasa is dynamic, our instructors always demonstrate modifications using props and lower-intensity variations. If you prefer a slower pace to start, our Hatha Foundation class is also an ideal starting point.
+                </div>
+              </div>
+              <div class="accordion-item-custom">
+                <div class="accordion-header-custom">
+                  <span>What temperature is the room kept at?</span>
+                  <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="accordion-body-custom">
+                  We maintain a comfortable ambient room temperature of 75°F to 78°F (24°C–25°C), supplemented by our gentle far-infrared radiant panels that warm the muscles directly without stuffy or humid air.
+                </div>
+              </div>
+              <div class="accordion-item-custom">
+                <div class="accordion-header-custom">
+                  <span>What is your cancellation policy?</span>
+                  <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="accordion-body-custom">
+                  You may cancel or reschedule your reservation up to 4 hours prior to class time with zero penalty. Your credit will be automatically refunded to your member account.
+                </div>
+              </div>
+            </div>
+
+            <!-- Instructor Highlight Card -->
+            <h3 class="mb-3">Lead Instructor for This Class</h3>
+            <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); padding: 24px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+              <img src="assets/images/instructors/elena-rostova.jpg" alt="Elena Rostova" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-primary-border);">
+              <div style="flex: 1; min-width: 240px;">
+                <span class="badge-custom mb-1">500-RYT Master Teacher</span>
+                <h4 style="margin-bottom: 4px;">Elena Rostova</h4>
+                <p style="font-size: 0.88rem; color: var(--color-black-soft); margin-bottom: 12px;">
+                  Elena holds degrees in kinesiology and has spent 14 years teaching dynamic breathwork and classical alignment across Europe and Asia.
+                </p>
+                <button type="button" class="btn btn-outline-primary btn-sm" data-trigger="book-class" data-instructor-name="Elena Rostova">Book with Elena</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Sticky Booking Widget Card -->
+          <div class="col-lg-4">
+            <div style="position: sticky; top: 100px;">
+              <div class="pricing-card" style="padding: 30px;">
+                <span class="badge-custom mb-2">Drop-In or Membership</span>
+                <h3 style="margin-bottom: 6px;">Vinyasa Flow</h3>
+                <div class="pricing-price" style="font-size: 2.4rem; margin: 12px 0;">
+                  $25 <span>/ single session</span>
+                </div>
+                <p style="font-size: 0.88rem; color: var(--color-black-muted); margin-bottom: 20px;">
+                  Or included with any active Studio Membership Pass.
+                </p>
+
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; font-size: 0.9rem;">
+                  <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 8px;">
+                    <span style="color: var(--color-black-muted);"><i class="bi bi-clock me-2"></i>Duration:</span>
+                    <strong>60 Minutes</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 8px;">
+                    <span style="color: var(--color-black-muted);"><i class="bi bi-bar-chart me-2"></i>Intensity:</span>
+                    <strong>Medium - High</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 8px;">
+                    <span style="color: var(--color-black-muted);"><i class="bi bi-geo me-2"></i>Studio Space:</span>
+                    <strong>Sun Sanctuary A</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 8px;">
+                    <span style="color: var(--color-black-muted);"><i class="bi bi-people me-2"></i>Class Capacity:</span>
+                    <strong>16 Mats Max</strong>
+                  </div>
+                </div>
+
+                <button type="button" class="btn btn-primary w-100 mb-2" data-trigger="book-class" data-class-name="Vinyasa Flow">
+                  <i class="bi bi-calendar-plus me-1"></i> Reserve Your Mat
+                </button>
+                <a href="membership.html" class="btn btn-outline-dark w-100 btn-sm">
+                  Compare Memberships
+                </a>
+                <small style="display: block; text-align: center; color: var(--color-black-muted); font-size: 0.78rem; margin-top: 14px;">
+                  Instant confirmation • Free cancellation up to 4 hrs
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Classes Section -->
+        <div style="margin-top: 80px; border-top: 1px solid var(--color-border); padding-top: 60px;">
+          <h3 class="mb-4">Related Classes You May Love</h3>
+          <div class="row g-4 equal-height-grid">
+            <div class="col-md-4">
+              <div class="studio-card card-equal">
+                <div>
+                  <div class="card-img-wrapper">
+                    <img src="assets/images/classes/hatha-yoga.jpg" alt="Hatha Yoga" loading="lazy">
+                  </div>
+                  <div class="card-body-custom">
+                    <h5>Hatha Foundation</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-black-soft);">Grounded classical alignment and steady holding for posture strength.</p>
+                  </div>
+                </div>
+                <div class="card-body-custom pt-0">
+                  <a href="class-details.html" class="btn btn-outline-primary btn-sm w-100">View Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="studio-card card-equal">
+                <div>
+                  <div class="card-img-wrapper">
+                    <img src="assets/images/classes/yin-yoga.jpg" alt="Yin Sanctuary" loading="lazy">
+                  </div>
+                  <div class="card-body-custom">
+                    <h5>Yin Sanctuary</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-black-soft);">Complement dynamic vinyasa with deep connective tissue restoration.</p>
+                  </div>
+                </div>
+                <div class="card-body-custom pt-0">
+                  <a href="class-details.html" class="btn btn-outline-primary btn-sm w-100">View Details</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="studio-card card-equal">
+                <div>
+                  <div class="card-img-wrapper">
+                    <img src="assets/images/classes/power-vinyasa.jpg" alt="Power Vinyasa" loading="lazy">
+                  </div>
+                  <div class="card-body-custom">
+                    <h5>Power Vinyasa</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-black-soft);">Elevated strength conditioning with arm balances and inversions.</p>
+                  </div>
+                </div>
+                <div class="card-body-custom pt-0">
+                  <a href="class-details.html" class="btn btn-outline-primary btn-sm w-100">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container-custom">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="site-logo mb-3" style="color: #fff;">
+            <span class="logo-icon"><i class="bi bi-flower1"></i></span>
+            PRANA<span>YOGA</span>
+          </div>
+          <p style="font-size: 0.92rem; color: rgba(255, 255, 255, 0.7); max-width: 320px; margin-bottom: 20px;">
+            A sanctuary devoted to traditional yogic alignment, acoustic meditation, and holistic mindfulness in our urban oasis.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Philosophy</a></li>
+            <li><a href="classes.html">All Classes</a></li>
+            <li><a href="instructors.html">Our Teachers</a></li>
+            <li><a href="schedule.html">Class Schedule</a></li>
+            <li><a href="membership.html">Memberships</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <h5>Dashboards & Portals</h5>
+          <ul class="footer-links">
+            <li><a href="member-dashboard/index.html">Member Portal</a></li>
+            <li><a href="member-dashboard/bookings.html">My Bookings</a></li>
+            <li><a href="admin-dashboard/index.html">Admin Dashboard</a></li>
+            <li><a href="login.html">Sign In / Register</a></li>
+            <li><a href="coming-soon.html">Upcoming Retreats</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h5>Sanctuary Hours</h5>
+          <p style="font-size: 0.88rem; margin-bottom: 6px;">Monday – Friday: 06:30 AM – 08:30 PM</p>
+          <p style="font-size: 0.88rem; margin-bottom: 16px;">Saturday – Sunday: 07:30 AM – 06:00 PM</p>
+          <div style="font-size: 0.88rem; color: rgba(255, 255, 255, 0.75);">
+            <div><i class="bi bi-geo-alt me-2"></i> 742 Evergreen Lotus Sanctuary</div>
+            <div class="mt-1"><i class="bi bi-telephone me-2"></i> +1 (555) 389-4921</div>
+            <div class="mt-1"><i class="bi bi-envelope me-2"></i> namaste@pranayoga.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Prana Yoga & Meditation Studio. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="documentation/index.html">Documentation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js?v=2.2"></script>
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>

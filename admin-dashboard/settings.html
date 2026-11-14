@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Settings & Policies — Prana Yoga Admin</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232F6A55'/><text x='50' y='62' font-size='38' text-anchor='middle' fill='%23ffffff' font-family='serif'>ॐ</text></svg>">
+
+    <!-- Pre-render Theme Initialization (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = (localStorage.getItem('prana-theme') || localStorage.getItem('stackly-theme'));
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+<!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/rtl.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar" aria-label="Admin Navigation">
+      <div class="sidebar-brand">
+        <a href="index.html" class="logo-text">
+          <span class="logo-icon" style="width: 32px; height: 32px; font-size: 1.1rem;"><i class="bi bi-shield-lock"></i></span>
+          <span class="brand-name">PRANA<span>ADMIN</span></span>
+        </a>
+      </div>
+
+      <div class="sidebar-menu-wrapper">
+        <div class="sidebar-section-title">Studio Management</div>
+        <ul class="sidebar-menu">
+          <li><a href="index.html" class="dash-nav-link"><i class="bi bi-speedometer2"></i><span>Overview</span></a></li>
+          <li><a href="members.html" class="dash-nav-link"><i class="bi bi-people"></i><span>Members</span></a></li>
+          <li><a href="classes.html" class="dash-nav-link"><i class="bi bi-card-checklist"></i><span>Classes & Styles</span></a></li>
+          <li><a href="instructors.html" class="dash-nav-link"><i class="bi bi-person-badge"></i><span>Instructors</span></a></li>
+          <li><a href="schedules.html" class="dash-nav-link"><i class="bi bi-calendar-week"></i><span>Class Schedules</span></a></li>
+          <li><a href="bookings.html" class="dash-nav-link"><i class="bi bi-journal-check"></i><span>All Bookings</span></a></li>
+          <li><a href="memberships.html" class="dash-nav-link"><i class="bi bi-gem"></i><span>Membership Plans</span></a></li>
+          <li><a href="payments.html" class="dash-nav-link"><i class="bi bi-cash-stack"></i><span>Payments & Revenue</span></a></li>
+          <li><a href="messages.html" class="dash-nav-link"><i class="bi bi-chat-left-text"></i><span>Messages & Inquiries</span></a></li>
+          <li><a href="reports.html" class="dash-nav-link"><i class="bi bi-bar-chart-line"></i><span>Reports & Analytics</span></a></li>
+          <li><a href="settings.html" class="dash-nav-link active"><i class="bi bi-sliders"></i><span>Studio Settings</span></a></li>
+        </ul>
+
+        <div class="sidebar-section-title">Studio Site</div>
+        <ul class="sidebar-menu">
+          <li><a href="../index.html" class="dash-nav-link"><i class="bi bi-arrow-up-right-square"></i><span>View Public Website</span></a></li>
+          <li><a href="../member-dashboard/index.html" class="dash-nav-link"><i class="bi bi-person"></i><span>View Member Portal</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="../login.html" class="dash-nav-link text-danger" style="color: #b33939 !important;"><i class="bi bi-box-arrow-left"></i><span>Log Out</span></a>
+      </div>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn"><i class="bi bi-list"></i></button>
+          <div style="font-size: 0.95rem; font-weight: 600; color: var(--color-black);">Studio Configuration & Booking Rules</div>
+        </div>
+        <div class="topbar-right">
+          <button type="button" class="theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button type="button" class="rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <div class="dropdown-custom">
+            <button type="button" class="dropdown-toggle-custom">
+              <span style="width: 36px; height: 36px; border-radius: 50%; background-color: var(--color-primary); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-weight: 700;">AD</span>
+              <span class="d-none d-md-inline" style="font-size: 0.88rem; font-weight: 600;">Director Admin</span>
+            </button>
+            <ul class="dropdown-menu-custom">
+              <li><a href="settings.html"><i class="bi bi-sliders"></i> Settings</a></li>
+              <li><a href="../login.html"><i class="bi bi-box-arrow-left"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <div class="mb-4">
+          <h2 style="font-size: 1.8rem; margin-bottom: 4px;">Studio Settings & Booking Policies</h2>
+          <p style="font-size: 0.9rem; color: var(--color-black-muted); margin: 0;">Configure studio metadata, automated cancellation thresholds, and third-party integration placeholders.</p>
+        </div>
+
+        <form data-validate="true" data-success-message="Studio configuration successfully updated!">
+          <div class="row g-4">
+            <!-- Left Column: Business Profile -->
+            <div class="col-lg-6">
+              <div class="dashboard-card mb-4">
+                <h4 style="font-size: 1.2rem; margin-bottom: 16px;"><i class="bi bi-building text-primary me-2"></i> Studio Identity</h4>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label">Studio Business Name</label>
+                    <input type="text" class="form-control" value="Prana Yoga & Meditation Studio" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="form-label">Contact Email</label>
+                    <input type="email" class="form-control" value="namaste@pranayoga.com" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="form-label">Contact Phone</label>
+                    <input type="tel" class="form-control" value="+1 (555) 389-4921" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Physical Address</label>
+                    <input type="text" class="form-control" value="742 Evergreen Lotus Sanctuary, Suite 300" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Business Hours Summary</label>
+                    <input type="text" class="form-control" value="Mon–Fri: 06:30 AM–08:30 PM | Sat–Sun: 07:30 AM–06:00 PM">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Integration Placeholders -->
+              <div class="dashboard-card">
+                <h4 style="font-size: 1.2rem; margin-bottom: 16px;"><i class="bi bi-plug text-primary me-2"></i> Integration Placeholders</h4>
+                <p style="font-size: 0.85rem; color: var(--color-black-muted); margin-bottom: 16px;">
+                  Secure backend connection endpoints. Keep real API keys in your environment variables.
+                </p>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label">Payment Gateway (Stripe/PayPal Public Key)</label>
+                    <input type="text" class="form-control" placeholder="pk_live_********************************" value="pk_test_sample_prana_yoga_ready">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Google Maps Embed API Key</label>
+                    <input type="text" class="form-control" placeholder="AIzaSy********************************" value="AIzaSy_demo_maps_placeholder_ready">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Email Service (SendGrid/Resend Endpoint)</label>
+                    <input type="text" class="form-control" value="smtp.pranayoga.com:587">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Booking Rules & Studio Policies -->
+            <div class="col-lg-6">
+              <div class="dashboard-card h-100 d-flex flex-column justify-content-between">
+                <div>
+                  <h4 style="font-size: 1.2rem; margin-bottom: 16px;"><i class="bi bi-shield-check text-primary me-2"></i> Booking Engine Policies</h4>
+
+                  <div class="row g-3 mb-4">
+                    <div class="col-sm-6">
+                      <label class="form-label">Cancellation Window</label>
+                      <select class="form-select">
+                        <option value="2">Up to 2 hours prior</option>
+                        <option value="4" selected>Up to 4 hours prior (Default)</option>
+                        <option value="12">Up to 12 hours prior</option>
+                        <option value="24">Up to 24 hours prior</option>
+                      </select>
+                      <small style="color: var(--color-black-muted); font-size: 0.78rem;">Full credit refund if cancelled within window.</small>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <label class="form-label">Advance Booking Horizon</label>
+                      <select class="form-select">
+                        <option value="7">7 Days in advance</option>
+                        <option value="14" selected>14 Days in advance (Default)</option>
+                        <option value="30">30 Days in advance</option>
+                      </select>
+                      <small style="color: var(--color-black-muted); font-size: 0.78rem;">How far ahead members can reserve mats.</small>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <label class="form-label">Default Studio Mat Capacity</label>
+                      <input type="number" class="form-control" value="16" min="8" max="24">
+                      <small style="color: var(--color-black-muted); font-size: 0.78rem;">Standard cap for Sanctuary rooms.</small>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <label class="form-label">Waitlist Queue Cap</label>
+                      <input type="number" class="form-control" value="5" min="1" max="10">
+                      <small style="color: var(--color-black-muted); font-size: 0.78rem;">Maximum standby students per class.</small>
+                    </div>
+                  </div>
+
+                  <h4 style="font-size: 1.2rem; margin: 24px 0 14px; border-top: 1px solid var(--color-border-subtle); padding-top: 20px;">
+                    Automated Notifications
+                  </h4>
+                  <div style="display: flex; flex-direction: column; gap: 14px; font-size: 0.88rem;">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="autoCheckin" checked>
+                      <label class="form-check-label" for="autoCheckin">
+                        Send automatic check-in confirmation and locker number SMS upon front desk check-in.
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="waitlistAutoPromote" checked>
+                      <label class="form-check-label" for="waitlistAutoPromote">
+                        Automatically promote #1 waitlist student when a booked member cancels.
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="lateNotice" checked>
+                      <label class="form-check-label" for="lateNotice">
+                        Lock studio sanctuary doors strictly at class start time to preserve silence.
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-4" style="border-top: 1px solid var(--color-border-subtle); margin-top: auto;">
+                  <button type="submit" class="btn btn-primary w-100">
+                    <i class="bi bi-save me-1"></i> Save Studio Policies & Settings
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js?v=2.2"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

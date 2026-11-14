@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Prana Yoga & Meditation Studio</title>
+  <meta name="description" content="Learn about our story, mission, holistic philosophy, and accredited instructors at Prana Yoga & Meditation Studio.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232F6A55'/><text x='50' y='62' font-size='38' text-anchor='middle' fill='%23ffffff' font-family='serif'>ॐ</text></svg>">
+
+    <!-- Pre-render Theme Initialization (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = (localStorage.getItem('prana-theme') || localStorage.getItem('stackly-theme'));
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+<!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=2.2">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container-custom header-container">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon"><i class="bi bi-flower1"></i></span>
+        PRANA<span>YOGA</span>
+      </a>
+
+      <nav class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home <i class="bi bi-chevron-down ms-1" style="font-size: 0.75rem;"></i></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html">Home 1 — Studio Main</a></li>
+            <li><a href="index-2.html">Home 2 — Mindful Lifestyle</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="classes.html" class="nav-link">Classes</a></li>
+        <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li class="nav-item"><a href="instructors.html" class="nav-link">Instructors</a></li>
+        <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        <button type="button" class="rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+        <a href="login.html" class="btn btn-outline-dark btn-sm header-cta-desktop"><i class="bi bi-person"></i> Account</a>
+        <button type="button" class="btn btn-primary btn-sm header-cta-desktop" data-trigger="book-class">Book a Class</button>
+        <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu"><i class="bi bi-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="site-logo">
+        <span class="logo-icon" style="width: 32px; height: 32px;"><i class="bi bi-flower1"></i></span>
+        PRANA<span>YOGA</span>
+      </div>
+      <button type="button" class="modal-close-btn mobile-nav-close" aria-label="Close Mobile Menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home 1 — Studio Main</a></li>
+      <li><a href="index-2.html">Home 2 — Mindful Lifestyle</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="schedule.html">Schedule & Booking</a></li>
+      <li><a href="instructors.html">Instructors</a></li>
+      <li><a href="membership.html">Membership Plans</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="gallery.html">Studio Gallery</a></li>
+      <li><a href="blog.html">Wellness Blog</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="member-dashboard/index.html">Member Dashboard</a></li>
+      <li><a href="admin-dashboard/index.html">Admin Dashboard</a></li>
+    </ul>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+      <button type="button" class="btn btn-primary w-100" data-trigger="book-class">Book a Class</button>
+      <a href="login.html" class="btn btn-outline-dark w-100">Member Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Page Banner Section with Specified Path & Three-Color Overlay -->
+    <section class="page-banner" style="background-image: url('assets/images/page-banners/about-banner.jpg');">
+      <div class="page-banner-overlay"></div>
+      <div class="container-custom">
+        <span class="section-tag mb-2"><i class="bi bi-heart"></i> Our Story & Heart</span>
+        <h1>About Prana Studio</h1>
+        <p>A tranquil home for mindful movement, acoustic resonance, and authentic human connection.</p>
+        <ul class="breadcrumb-custom">
+          <li><a href="index.html">Home</a></li>
+          <li class="separator">/</li>
+          <li>About Us</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Studio Story & Genesis -->
+    <section class="section-py">
+      <div class="container-custom">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="section-tag"><i class="bi bi-clock-history"></i> The Origin</span>
+            <h2>Born from a Desire for Genuine Stillness in a Busy World</h2>
+            <p style="font-size: 1.05rem; margin-bottom: 20px;">
+              Prana Studio was founded in 2018 by master practitioner Elena Rostova. Having spent over a decade studying traditional asana in Mysore, India and contemplative sound therapies in the Himalayas, Elena recognized that modern city life urgently needed a sacred haven free from judgment, commercial pressure, and distraction.
+            </p>
+            <p style="font-size: 0.95rem; color: var(--color-black-soft); margin-bottom: 24px;">
+              What started as an intimate gathering of six dedicated practitioners in a quiet second-story loft has blossomed into a cherished community sanctuary. Today, our 6,000 sq.ft space welcomes thousands of students monthly, offering over 40 weekly classes across 10 distinct yoga and meditation disciplines.
+            </p>
+            <div class="about-story-stats" style="display: flex; gap: 24px; border-top: 1px solid var(--color-border); padding-top: 20px;">
+              <div class="about-story-stat">
+                <strong style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-primary); display: block;">2018</strong>
+                <small style="color: var(--color-black-muted);">Year Established</small>
+              </div>
+              <div class="about-story-stat">
+                <strong style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-primary); display: block;">14,000+</strong>
+                <small style="color: var(--color-black-muted);">Hours Practiced</small>
+              </div>
+              <div class="about-story-stat">
+                <strong style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-primary); display: block;">100%</strong>
+                <small style="color: var(--color-black-muted);">Non-Toxic Sanctuary</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div style="border-radius: var(--border-radius-lg); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-subtle);">
+              <img src="assets/images/about-intro.jpg" alt="Prana Studio Story" style="width: 100%; height: auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Core Philosophy (Equal Height Cards) -->
+    <section class="section-py" style="background-color: var(--color-surface-tint);">
+      <div class="container-custom">
+        <div class="section-header">
+          <span class="section-tag"><i class="bi bi-compass"></i> Guiding Principles</span>
+          <h2>Our Philosophy & Mission</h2>
+          <p>We honor yoga as an expansive eight-limbed discipline of living consciously, not simply physical exercise.</p>
+        </div>
+
+        <div class="row g-4 equal-height-grid about-principles-grid">
+          <div class="col-md-4">
+            <div class="studio-card card-equal about-principle-card" style="padding: 32px 28px;">
+              <div class="icon-box icon-box-circle">
+                <i class="bi bi-heart-pulse"></i>
+              </div>
+              <h4>Anatomical Inclusivity</h4>
+              <p style="font-size: 0.92rem; color: var(--color-black-soft); margin: 0;">
+                Every skeleton is uniquely shaped. We teach functional alignment over rigid aesthetics, empowering each student to honor their bone structure and nervous system.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="studio-card card-equal about-principle-card" style="padding: 32px 28px;">
+              <div class="icon-box icon-box-circle">
+                <i class="bi bi-wind"></i>
+              </div>
+              <h4>Breath as the Anchor</h4>
+              <p style="font-size: 0.92rem; color: var(--color-black-soft); margin: 0;">
+                Without conscious breath, movement is merely gymnastics. Every posture is guided by smooth pranayama that quiets reactive thought patterns.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="studio-card card-equal about-principle-card" style="padding: 32px 28px;">
+              <div class="icon-box icon-box-circle">
+                <i class="bi bi-people"></i>
+              </div>
+              <h4>Community & Belonging</h4>
+              <p style="font-size: 0.92rem; color: var(--color-black-soft); margin: 0;">
+                We reject elitism. Our studio welcomes practitioners of all ages, backgrounds, orientations, and physical abilities with authentic warmth and open arms.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Facilities Walkthrough -->
+    <section class="section-py">
+      <div class="container-custom">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div style="border-radius: var(--border-radius-lg); overflow: hidden; border: 1px solid var(--color-border);">
+              <img src="assets/images/atmosphere.jpg" alt="Facilities & Amenities" style="width: 100%; height: auto;">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <span class="section-tag"><i class="bi bi-building"></i> Sanctuary Details</span>
+            <h2>Sustainable Spaces Crafted for Restoration</h2>
+            <p style="font-size: 1.02rem; margin-bottom: 24px;">
+              We believe the physical environment directly impacts mental state. Our two primary studios—The Sun Room and The Earth Room—are purposefully built with eco-conscious architecture:
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <i class="bi bi-check-circle-fill text-primary" style="font-size: 1.2rem; color: var(--color-primary) !important;"></i>
+                <div>
+                  <h5 style="margin-bottom: 2px;">Triple-Filtered Medical HEPA Air</h5>
+                  <p style="font-size: 0.9rem; color: var(--color-black-soft); margin: 0;">Continuous fresh outdoor air exchange infused with gentle eucalyptus mist.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <i class="bi bi-check-circle-fill text-primary" style="font-size: 1.2rem; color: var(--color-primary) !important;"></i>
+                <div>
+                  <h5 style="margin-bottom: 2px;">Far-Infrared Heating Panels</h5>
+                  <p style="font-size: 0.9rem; color: var(--color-black-soft); margin: 0;">Gentle solar radiant heat for detoxifying sweat without hot, dry, suffocating air.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <i class="bi bi-check-circle-fill text-primary" style="font-size: 1.2rem; color: var(--color-primary) !important;"></i>
+                <div>
+                  <h5 style="margin-bottom: 2px;">Complimentary Mat & Prop Library</h5>
+                  <p style="font-size: 0.9rem; color: var(--color-black-soft); margin: 0;">High-density non-slip mats, organic cotton straps, bolsters, and lavender eye pillows.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty Teaser & CTA -->
+    <section class="section-py" style="background-color: var(--color-surface-tint); border-top: 1px solid var(--color-border);">
+      <div class="container-custom text-center">
+        <span class="section-tag"><i class="bi bi-people"></i> Meet Our Guides</span>
+        <h2>Experienced Instructors Ready to Guide You</h2>
+        <p style="max-width: 600px; margin: 0 auto 30px;">
+          Get to know our 15 certified master teachers, their lineages, and their weekly class schedules.
+        </p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="instructors.html" class="btn btn-primary">View All Instructors</a>
+          <button type="button" class="btn btn-outline-dark" data-trigger="book-class">Book a Session</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container-custom">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="site-logo mb-3" style="color: #fff;">
+            <span class="logo-icon"><i class="bi bi-flower1"></i></span>
+            PRANA<span>YOGA</span>
+          </div>
+          <p style="font-size: 0.92rem; color: rgba(255, 255, 255, 0.7); max-width: 320px; margin-bottom: 20px;">
+            A sanctuary devoted to traditional yogic alignment, acoustic meditation, and holistic mindfulness in our urban oasis.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Philosophy</a></li>
+            <li><a href="classes.html">All Classes</a></li>
+            <li><a href="instructors.html">Our Teachers</a></li>
+            <li><a href="schedule.html">Class Schedule</a></li>
+            <li><a href="membership.html">Memberships</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <h5>Dashboards & Portals</h5>
+          <ul class="footer-links">
+            <li><a href="member-dashboard/index.html">Member Portal</a></li>
+            <li><a href="member-dashboard/bookings.html">My Bookings</a></li>
+            <li><a href="admin-dashboard/index.html">Admin Dashboard</a></li>
+            <li><a href="login.html">Sign In / Register</a></li>
+            <li><a href="coming-soon.html">Upcoming Retreats</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h5>Sanctuary Hours</h5>
+          <p style="font-size: 0.88rem; margin-bottom: 6px;">Monday – Friday: 06:30 AM – 08:30 PM</p>
+          <p style="font-size: 0.88rem; margin-bottom: 16px;">Saturday – Sunday: 07:30 AM – 06:00 PM</p>
+          <div style="font-size: 0.88rem; color: rgba(255, 255, 255, 0.75);">
+            <div><i class="bi bi-geo-alt me-2"></i> 742 Evergreen Lotus Sanctuary</div>
+            <div class="mt-1"><i class="bi bi-telephone me-2"></i> +1 (555) 389-4921</div>
+            <div class="mt-1"><i class="bi bi-envelope me-2"></i> namaste@pranayoga.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Prana Yoga & Meditation Studio. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="documentation/index.html">Documentation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js?v=2.2"></script>
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>

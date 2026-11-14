@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Schedule & Book a Class — Prana Yoga Studio</title>
+  <meta name="description" content="Browse our weekly calendar of yoga classes, sound baths, and meditation sessions. Reserve your mat online with live seat availability.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232F6A55'/><text x='50' y='62' font-size='38' text-anchor='middle' fill='%23ffffff' font-family='serif'>ॐ</text></svg>">
+
+  <!-- Pre-render Theme Initialization (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = (localStorage.getItem('prana-theme') || localStorage.getItem('stackly-theme'));
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/rtl.css?v=2.2">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container-custom header-container">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon"><i class="bi bi-flower1"></i></span>
+        PRANA<span>YOGA</span>
+      </a>
+
+      <nav class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home <i class="bi bi-chevron-down ms-1" style="font-size: 0.75rem;"></i></a>
+          <ul class="nav-dropdown">
+            <li><a href="index.html">Home 1 — Studio Main</a></li>
+            <li><a href="index-2.html">Home 2 — Mindful Lifestyle</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="classes.html" class="nav-link">Classes</a></li>
+        <li class="nav-item"><a href="schedule.html" class="nav-link active">Schedule</a></li>
+        <li class="nav-item"><a href="instructors.html" class="nav-link">Instructors</a></li>
+        <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        <button type="button" class="rtl-toggle-btn" title="Toggle RTL" aria-label="Toggle RTL"><i class="bi bi-translate"></i></button>
+        <a href="login.html" class="btn btn-outline-dark btn-sm header-cta-desktop"><i class="bi bi-person"></i> Account</a>
+        <button type="button" class="btn btn-primary btn-sm header-cta-desktop" data-trigger="book-class">Book a Class</button>
+        <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu"><i class="bi bi-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="site-logo">
+        <span class="logo-icon" style="width: 32px; height: 32px;"><i class="bi bi-flower1"></i></span>
+        PRANA<span>YOGA</span>
+      </div>
+      <button type="button" class="modal-close-btn mobile-nav-close" aria-label="Close Mobile Menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home 1 — Studio Main</a></li>
+      <li><a href="index-2.html">Home 2 — Mindful Lifestyle</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="schedule.html" class="active">Schedule & Booking</a></li>
+      <li><a href="instructors.html">Instructors</a></li>
+      <li><a href="membership.html">Membership Plans</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Studio Gallery</a></li>
+      <li><a href="blog.html">Wellness Blog</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="member-dashboard/index.html">Member Dashboard</a></li>
+      <li><a href="admin-dashboard/index.html">Admin Dashboard</a></li>
+    </ul>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+      <button type="button" class="btn btn-primary w-100" data-trigger="book-class">Book a Class</button>
+      <a href="login.html" class="btn btn-outline-dark w-100">Member Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Page Banner with exact path: assets/images/page-banners/schedule-banner.jpg -->
+    <section class="page-banner" style="background-image: url('assets/images/page-banners/schedule-banner.jpg');">
+      <div class="page-banner-overlay"></div>
+      <div class="container-custom">
+        <span class="section-tag mb-2"><i class="bi bi-calendar3"></i> Sanctuary Calendar</span>
+        <h1>Weekly Timetable & Class Booking</h1>
+        <p>Reserve your mat in advance. Filter sessions by discipline, instructor, time of day, and live room capacity.</p>
+        <ul class="breadcrumb-custom">
+          <li><a href="index.html">Home</a></li>
+          <li class="separator">/</li>
+          <li>Schedule</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="section-py">
+      <div class="container-custom">
+
+        <!-- Day Selector Nav Tabs -->
+        <div class="schedule-day-nav mb-4" id="scheduleDayNav">
+          <button type="button" class="day-tab-btn active" data-day="monday">Monday</button>
+          <button type="button" class="day-tab-btn" data-day="tuesday">Tuesday</button>
+          <button type="button" class="day-tab-btn" data-day="wednesday">Wednesday</button>
+          <button type="button" class="day-tab-btn" data-day="thursday">Thursday</button>
+          <button type="button" class="day-tab-btn" data-day="friday">Friday</button>
+          <button type="button" class="day-tab-btn" data-day="saturday">Saturday</button>
+          <button type="button" class="day-tab-btn" data-day="sunday">Sunday</button>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="schedule-filter-bar mb-4">
+          <div class="row g-3 w-100 align-items-center">
+            <div class="col-md-3">
+              <label class="form-label" style="font-size: 0.8rem; margin-bottom: 2px;">Filter Class Style</label>
+              <select class="form-select form-select-sm" id="schedStyleFilter">
+                <option value="all">All Disciplines</option>
+                <option value="vinyasa">Vinyasa Flow</option>
+                <option value="hatha">Hatha Yoga</option>
+                <option value="yin">Yin Sanctuary</option>
+                <option value="sound">Sound Bath Healing</option>
+                <option value="meditation">Guided Meditation</option>
+                <option value="ashtanga">Ashtanga Primary</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label" style="font-size: 0.8rem; margin-bottom: 2px;">Filter Teacher</label>
+              <select class="form-select form-select-sm" id="schedTeacherFilter">
+                <option value="all">All Instructors</option>
+                <option value="elena">Elena Rostova</option>
+                <option value="marcus">Marcus Vance</option>
+                <option value="priya">Priya Sharma</option>
+                <option value="david">David Chen</option>
+                <option value="sophia">Sophia Martinez</option>
+                <option value="arjun">Arjun Mehta</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label" style="font-size: 0.8rem; margin-bottom: 2px;">Time of Day</label>
+              <select class="form-select form-select-sm" id="schedTimeFilter">
+                <option value="all">All Day (6am - 9pm)</option>
+                <option value="morning">Morning (6am - 12pm)</option>
+                <option value="afternoon">Afternoon (12pm - 5pm)</option>
+                <option value="evening">Evening (5pm - 9pm)</option>
+              </select>
+            </div>
+            <div class="col-md-3 text-md-end pt-md-3">
+              <button type="button" class="btn btn-outline-dark btn-sm w-100" id="resetSchedFilters">
+                <i class="bi bi-arrow-clockwise"></i> Reset Filters
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schedule Items List -->
+        <div id="scheduleListContainer">
+
+          <!-- Session 1 -->
+          <div class="schedule-row-card sched-item" data-day="monday tuesday wednesday thursday friday" data-style="ashtanga" data-teacher="arjun" data-time="morning">
+            <div class="schedule-time">
+              06:30 AM - 08:00 AM
+              <small>Morning Tapas (90 Min)</small>
+            </div>
+            <div class="schedule-title">
+              <h5>Ashtanga Mysore & Self Practice</h5>
+              <small style="color: var(--color-black-muted);"><i class="bi bi-person me-1"></i> Arjun Mehta &nbsp;|&nbsp; <i class="bi bi-geo-alt me-1"></i> Sun Sanctuary A</small>
+            </div>
+            <div class="schedule-seats">
+              <i class="bi bi-people-fill"></i> 5 Spots Available
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary btn-sm" data-trigger="book-class" data-class-name="Ashtanga Mysore & Self Practice" data-instructor-name="Arjun Mehta">
+                Reserve Mat
+              </button>
+            </div>
+          </div>
+
+          <!-- Session 2 -->
+          <div class="schedule-row-card sched-item" data-day="monday wednesday friday" data-style="vinyasa" data-teacher="elena" data-time="morning">
+            <div class="schedule-time">
+              08:30 AM - 09:30 AM
+              <small>Awakening Flow (60 Min)</small>
+            </div>
+            <div class="schedule-title">
+              <h5>Solar Vinyasa Flow</h5>
+              <small style="color: var(--color-black-muted);"><i class="bi bi-person me-1"></i> Elena Rostova &nbsp;|&nbsp; <i class="bi bi-geo-alt me-1"></i> Sun Sanctuary A</small>
+            </div>
+            <div class="schedule-seats">
+              <i class="bi bi-people-fill"></i> 3 Spots Left
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary btn-sm" data-trigger="book-class" data-class-name="Solar Vinyasa Flow" data-instructor-name="Elena Rostova">
+                Reserve Mat
+              </button>
+            </div>
+          </div>
+
+          <!-- Session 3 -->
+          <div class="schedule-row-card sched-item" data-day="monday tuesday wednesday thursday friday" data-style="hatha" data-teacher="priya" data-time="morning">
+            <div class="schedule-time">
+              10:30 AM - 11:45 AM
+              <small>Alignment & Hold (75 Min)</small>
+            </div>
+            <div class="schedule-title">
+              <h5>Traditional Hatha Foundation</h5>
+              <small style="color: var(--color-black-muted);"><i class="bi bi-person me-1"></i> Priya Sharma &nbsp;|&nbsp; <i class="bi bi-geo-alt me-1"></i> Earth Sanctuary B</small>
+            </div>
+            <div class="schedule-seats">
+              <i class="bi bi-people-fill"></i> 8 Spots Available
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary btn-sm" data-trigger="book-class" data-class-name="Traditional Hatha Foundation" data-instructor-name="Priya Sharma">
+                Reserve Mat
+              </button>
+            </div>
+          </div>
+
+          <!-- Session 4 -->
+          <div class="schedule-row-card sched-item" data-day="monday tuesday wednesday thursday friday" data-style="meditation" data-teacher="marcus" data-time="afternoon">
+            <div class="schedule-time">
+              12:15 PM - 01:00 PM
+              <small>Mid-Day Stillness (45 Min)</small>
+            </div>
+            <div class="schedule-title">
+              <h5>Somatic Pranayama & Mindful Reset</h5>
+              <small style="color: var(--color-black-muted);"><i class="bi bi-person me-1"></i> Marcus Vance &nbsp;|&nbsp; <i class="bi bi-geo-alt me-1"></i> Earth Sanctuary B</small>
+            </div>
+            <div class="schedule-seats">
+              <i class="bi bi-people-fill"></i> 6 Spots Available
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary btn-sm" data-trigger="book-class" data-class-name="Somatic Pranayama & Mindful Reset" data-instructor-name="Marcus Vance">
+                Reserve Mat
+              </button>
+            </div>
+          </div>
+
+          <!-- Session 5 -->
+          <div class="schedule-row-card sched-item" data-day="monday wednesday friday" data-style="vinyasa" data-teacher="elena" data-time="evening">
+            <div class="schedule-time">
+              05:30 PM - 06:45 PM
+              <small>Twilight Flow (75 Min)</small>
+            </div>
+            <div class="schedule-title">
+              <h5>Fluid Evening Vinyasa</h5>
+              <small style="color: var(--color-black-muted);"><i class="bi bi-person me-1"></i> Elena Rostova &nbsp;|&nbsp; <i class="bi bi-geo-alt me-1"></i> Sun Sanctuary A</small>
+            </div>
+            <div class="schedule-seats">
+              <i class="bi bi-people-fill"></i> 2 Spots Left
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary btn-sm" data-trigger="book-class" data-class-name="Fluid Evening Vinyasa" data-instructor-name="Elena Rostova">
+                Reserve Mat
+              </button>
+            </div>
+          </div>
+
+          <!-- Session 6 -->
+          <div class="schedule-row-card sched-item" data-day="monday tuesday wednesday thursday friday saturday sunday" data-style="yin" data-teacher="david" data-time="evening">
+            <div class="schedule-time">
+              07:00 PM - 08:15 PM
+              <small>Deep Fascial Release (75 Min)</small>
+            </div>
+            <div class="schedule-title">
+              <h5>Yin Sanctuary & Candlelight</h5>
+              <small style="color: var(--color-black-muted);"><i class="bi bi-person me-1"></i> David Chen &nbsp;|&nbsp; <i class="bi bi-geo-alt me-1"></i> Earth Sanctuary B</small>
+            </div>
+            <div class="schedule-seats">
+              <i class="bi bi-people-fill"></i> 4 Spots Available
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary btn-sm" data-trigger="book-class" data-class-name="Yin Sanctuary & Candlelight" data-instructor-name="David Chen">
+                Reserve Mat
+              </button>
+            </div>
+          </div>
+
+          <!-- Session 7 -->
+          <div class="schedule-row-card sched-item" data-day="friday saturday sunday" data-style="sound" data-teacher="marcus" data-time="evening">
+            <div class="schedule-time">
+              08:30 PM - 09:30 PM
+              <small>Vibrational Sound (60 Min)</small>
+            </div>
+            <div class="schedule-title">
+              <h5>Sacred Full Moon Crystal Sound Bath</h5>
+              <small style="color: var(--color-black-muted);"><i class="bi bi-person me-1"></i> Marcus Vance &nbsp;|&nbsp; <i class="bi bi-geo-alt me-1"></i> Sun Sanctuary A</small>
+            </div>
+            <div class="schedule-seats" style="color: #b33939;">
+              <i class="bi bi-exclamation-circle-fill"></i> 1 Spot Remaining!
+            </div>
+            <div>
+              <button type="button" class="btn btn-primary btn-sm" data-trigger="book-class" data-class-name="Sacred Full Moon Crystal Sound Bath" data-instructor-name="Marcus Vance">
+                Reserve Mat
+              </button>
+            </div>
+          </div>
+
+          <!-- Empty State Indicator -->
+          <div id="noSchedMatch" style="display: none; text-align: center; padding: 48px 24px; background-color: var(--color-surface); border: 1px dashed var(--color-border); border-radius: var(--border-radius-lg); margin-top: 14px;">
+            <i class="bi bi-calendar-x" style="font-size: 2.5rem; color: var(--color-primary); display: block; margin-bottom: 12px;"></i>
+            <h4 style="margin-bottom: 6px;">No Classes Found</h4>
+            <p style="color: var(--color-black-muted); max-width: 440px; margin: 0 auto 18px;">No sessions match your selected discipline, teacher, or time on this day. Try resetting filters or choosing another day.</p>
+            <button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('resetSchedFilters').click();">
+              <i class="bi bi-arrow-clockwise me-1"></i> Reset All Filters
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container-custom">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="site-logo mb-3" style="color: #fff;">
+            <span class="logo-icon"><i class="bi bi-flower1"></i></span>
+            PRANA<span>YOGA</span>
+          </div>
+          <p style="font-size: 0.92rem; color: rgba(255, 255, 255, 0.7); max-width: 320px; margin-bottom: 20px;">
+            A sanctuary devoted to traditional yogic alignment, acoustic meditation, and holistic mindfulness in our urban oasis.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">Our Philosophy</a></li>
+            <li><a href="classes.html">All Classes</a></li>
+            <li><a href="instructors.html">Our Teachers</a></li>
+            <li><a href="schedule.html">Class Schedule</a></li>
+            <li><a href="membership.html">Memberships</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <h5>Dashboards & Portals</h5>
+          <ul class="footer-links">
+            <li><a href="member-dashboard/index.html">Member Portal</a></li>
+            <li><a href="member-dashboard/bookings.html">My Bookings</a></li>
+            <li><a href="admin-dashboard/index.html">Admin Dashboard</a></li>
+            <li><a href="login.html">Sign In / Register</a></li>
+            <li><a href="coming-soon.html">Upcoming Retreats</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h5>Sanctuary Hours</h5>
+          <p style="font-size: 0.88rem; margin-bottom: 6px;">Monday – Friday: 06:30 AM – 08:30 PM</p>
+          <p style="font-size: 0.88rem; margin-bottom: 16px;">Saturday – Sunday: 07:30 AM – 06:00 PM</p>
+          <div style="font-size: 0.88rem; color: rgba(255, 255, 255, 0.75);">
+            <div><i class="bi bi-geo-alt me-2"></i> 742 Evergreen Lotus Sanctuary</div>
+            <div class="mt-1"><i class="bi bi-telephone me-2"></i> +1 (555) 389-4921</div>
+            <div class="mt-1"><i class="bi bi-envelope me-2"></i> namaste@pranayoga.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Prana Yoga & Meditation Studio. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="documentation/index.html">Documentation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js?v=2.2"></script>
+  <script src="assets/js/booking.js"></script>
+
+  <!-- Interactive Schedule Filter Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dayButtons = document.querySelectorAll('#scheduleDayNav .day-tab-btn');
+      const styleFilter = document.getElementById('schedStyleFilter');
+      const teacherFilter = document.getElementById('schedTeacherFilter');
+      const timeFilter = document.getElementById('schedTimeFilter');
+      const resetBtn = document.getElementById('resetSchedFilters');
+      const items = document.querySelectorAll('.sched-item');
+
+      let currentDay = 'monday';
+
+      function applyScheduleFilters() {
+        const selectedStyle = styleFilter.value;
+        const selectedTeacher = teacherFilter.value;
+        const selectedTime = timeFilter.value;
+        let visibleCount = 0;
+
+        items.forEach(item => {
+          const itemDays = item.getAttribute('data-day') || '';
+          const itemStyle = item.getAttribute('data-style') || '';
+          const itemTeacher = item.getAttribute('data-teacher') || '';
+          const itemTime = item.getAttribute('data-time') || '';
+
+          const matchDay = itemDays.includes(currentDay);
+          const matchStyle = (selectedStyle === 'all' || itemStyle === selectedStyle);
+          const matchTeacher = (selectedTeacher === 'all' || itemTeacher === selectedTeacher);
+          const matchTime = (selectedTime === 'all' || itemTime === selectedTime);
+
+          if (matchDay && matchStyle && matchTeacher && matchTime) {
+            item.style.display = 'flex';
+            visibleCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        const noMatch = document.getElementById('noSchedMatch');
+        if (noMatch) {
+          noMatch.style.display = (visibleCount === 0) ? 'block' : 'none';
+        }
+      }
+
+      dayButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          dayButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentDay = btn.getAttribute('data-day');
+          applyScheduleFilters();
+        });
+      });
+
+      if (styleFilter) styleFilter.addEventListener('change', applyScheduleFilters);
+      if (teacherFilter) teacherFilter.addEventListener('change', applyScheduleFilters);
+      if (timeFilter) timeFilter.addEventListener('change', applyScheduleFilters);
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          styleFilter.value = 'all';
+          teacherFilter.value = 'all';
+          timeFilter.value = 'all';
+          applyScheduleFilters();
+        });
+      }
+
+      // Initial filter run
+      applyScheduleFilters();
+    });
+  </script>
+</body>
+</html>

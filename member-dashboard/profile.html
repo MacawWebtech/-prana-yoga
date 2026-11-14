@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wellness Profile & Preferences — Prana Yoga Member Dashboard</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232F6A55'/><text x='50' y='62' font-size='38' text-anchor='middle' fill='%23ffffff' font-family='serif'>ॐ</text></svg>">
+
+    <!-- Pre-render Theme Initialization (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = (localStorage.getItem('prana-theme') || localStorage.getItem('stackly-theme'));
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+<!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/rtl.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar" aria-label="Member Navigation">
+      <div class="sidebar-brand">
+        <a href="index.html" class="logo-text">
+          <span class="logo-icon" style="width: 32px; height: 32px; font-size: 1.1rem;"><i class="bi bi-flower1"></i></span>
+          <span class="brand-name">PRANA<span>YOGA</span></span>
+        </a>
+      </div>
+
+      <div class="sidebar-menu-wrapper">
+        <div class="sidebar-section-title">Member Menu</div>
+        <ul class="sidebar-menu">
+          <li><a href="index.html" class="dash-nav-link"><i class="bi bi-grid-1x2"></i><span>Overview</span></a></li>
+          <li><a href="bookings.html" class="dash-nav-link"><i class="bi bi-calendar-check"></i><span>My Bookings</span></a></li>
+          <li><a href="class-history.html" class="dash-nav-link"><i class="bi bi-clock-history"></i><span>Class History</span></a></li>
+          <li><a href="membership.html" class="dash-nav-link"><i class="bi bi-gem"></i><span>My Membership</span></a></li>
+          <li><a href="payments.html" class="dash-nav-link"><i class="bi bi-receipt"></i><span>Payment History</span></a></li>
+          <li><a href="profile.html" class="dash-nav-link active"><i class="bi bi-person"></i><span>Wellness Profile</span></a></li>
+          <li><a href="settings.html" class="dash-nav-link"><i class="bi bi-gear"></i><span>Account Settings</span></a></li>
+        </ul>
+
+        <div class="sidebar-section-title">Studio Quick Links</div>
+        <ul class="sidebar-menu">
+          <li><a href="../schedule.html" class="dash-nav-link"><i class="bi bi-calendar3"></i><span>Full Schedule</span></a></li>
+          <li><a href="../classes.html" class="dash-nav-link"><i class="bi bi-card-list"></i><span>Browse Classes</span></a></li>
+          <li><a href="../index.html" class="dash-nav-link"><i class="bi bi-arrow-up-right-square"></i><span>Public Site</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="../login.html" class="dash-nav-link text-danger" style="color: #b33939 !important;"><i class="bi bi-box-arrow-left"></i><span>Log Out</span></a>
+      </div>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn"><i class="bi bi-list"></i></button>
+          <div style="font-size: 0.95rem; font-weight: 600; color: var(--color-black);">Wellness Profile & Physical Notes</div>
+        </div>
+        <div class="topbar-right">
+          <button type="button" class="theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button type="button" class="rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <div class="dropdown-custom">
+            <button type="button" class="dropdown-toggle-custom">
+              <img src="../assets/images/instructors/elena-rostova.jpg" alt="Member Avatar" class="user-avatar-sm">
+              <span class="d-none d-md-inline" style="font-size: 0.88rem; font-weight: 600; color: var(--color-black);">Elena R.</span>
+            </button>
+            <ul class="dropdown-menu-custom">
+              <li><a href="profile.html"><i class="bi bi-person"></i> Wellness Profile</a></li>
+              <li><a href="settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+              <li><a href="../login.html"><i class="bi bi-box-arrow-left"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <div class="mb-4">
+          <h2 style="font-size: 1.8rem; margin-bottom: 4px;">Member Wellness Profile</h2>
+          <p style="font-size: 0.9rem; color: var(--color-black-muted); margin: 0;">This information assists our instructors in providing safe postural modifications and respectful hands-on cues.</p>
+        </div>
+
+        <form data-validate="true" data-success-message="Wellness profile updated successfully!">
+          <div class="row g-4">
+            <!-- Left Column: Personal & Emergency Contact -->
+            <div class="col-lg-6">
+              <!-- Avatar Box -->
+              <div class="dashboard-card text-center mb-4">
+                <div style="position: relative; display: inline-block; margin-bottom: 16px;">
+                  <img src="../assets/images/instructors/elena-rostova.jpg" alt="Member Avatar" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-border);">
+                  <button type="button" class="btn btn-primary btn-sm btn-pill" style="position: absolute; bottom: 0; right: 0; padding: 4px 8px;" onclick="window.showToast('Select a new image from your files.');">
+                    <i class="bi bi-camera"></i>
+                  </button>
+                </div>
+                <h4>Elena Rostova</h4>
+                <p style="font-size: 0.85rem; color: var(--color-black-muted); margin: 0;">Member ID: STK-84209 &nbsp;|&nbsp; Unlimited Sanctuary Pass</p>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="dashboard-card">
+                <h4 style="font-size: 1.2rem; margin-bottom: 16px;">Contact Information</h4>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" value="Elena" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" value="Rostova" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" value="elena@pranayoga.com" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" value="+1 (555) 234-8901">
+                  </div>
+                </div>
+
+                <h4 style="font-size: 1.2rem; margin: 24px 0 16px; border-top: 1px solid var(--color-border-subtle); padding-top: 20px;">Emergency Contact</h4>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label class="form-label">Contact Name</label>
+                    <input type="text" class="form-control" value="Dmitri Rostova">
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="form-label">Relationship</label>
+                    <input type="text" class="form-control" value="Brother">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Emergency Phone</label>
+                    <input type="tel" class="form-control" value="+1 (555) 890-4412">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Experience & Wellness Preferences -->
+            <div class="col-lg-6">
+              <div class="dashboard-card h-100 d-flex flex-column justify-content-between">
+                <div>
+                  <h4 style="font-size: 1.2rem; margin-bottom: 16px;">Practice Preferences</h4>
+
+                  <div class="mb-3">
+                    <label class="form-label">Experience Level</label>
+                    <select class="form-select">
+                      <option value="beginner">Beginner (Under 1 year)</option>
+                      <option value="intermediate" selected>Intermediate (1–4 years)</option>
+                      <option value="advanced">Advanced Practitioner (5+ years)</option>
+                      <option value="teacher">Certified Teacher</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Hands-On Assists & Adjustments Preference</label>
+                    <select class="form-select">
+                      <option value="yes" selected>Yes, I welcome mindful hands-on alignment assists.</option>
+                      <option value="verbal">Verbal cues only please (hands-off).</option>
+                      <option value="ask">Please ask me privately before the session starts.</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-4">
+                    <label class="form-label">Physical Notes, Injuries or Considerations</label>
+                    <textarea class="form-control" rows="5" placeholder="Share any relevant notes (e.g. recovering from wrist tendonitis, lumbar disc sensitivity, pregnancy trimester, etc.).">Minor lower back tightness after long seated work hours. Prefers using two cork blocks for triangle and extended side angle poses.</textarea>
+                    <small style="display: block; color: var(--color-black-muted); margin-top: 6px;">Confidential to studio teachers and medical advisors.</small>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Preferred Session Types</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.88rem;">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="prefVinyasa" checked>
+                        <label class="form-check-label" for="prefVinyasa">Vinyasa Flow</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="prefSound" checked>
+                        <label class="form-check-label" for="prefSound">Sound Baths</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="prefYin" checked>
+                        <label class="form-check-label" for="prefYin">Yin Restorative</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="prefBreath" checked>
+                        <label class="form-check-label" for="prefBreath">Breathwork</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-4" style="border-top: 1px solid var(--color-border-subtle); margin-top: auto;">
+                  <button type="submit" class="btn btn-primary w-100">
+                    <i class="bi bi-check-circle me-1"></i> Save Wellness Profile
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js?v=2.2"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

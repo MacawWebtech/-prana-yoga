@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Settings — Prana Yoga Member Dashboard</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232F6A55'/><text x='50' y='62' font-size='38' text-anchor='middle' fill='%23ffffff' font-family='serif'>ॐ</text></svg>">
+
+    <!-- Pre-render Theme Initialization (Prevents FOUC / Theme Flash) -->
+  <script>
+    (function() {
+      try {
+        const saved = (localStorage.getItem('prana-theme') || localStorage.getItem('stackly-theme'));
+        const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved ? saved : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+<!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/rtl.css?v=2.2">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar" aria-label="Member Navigation">
+      <div class="sidebar-brand">
+        <a href="index.html" class="logo-text">
+          <span class="logo-icon" style="width: 32px; height: 32px; font-size: 1.1rem;"><i class="bi bi-flower1"></i></span>
+          <span class="brand-name">PRANA<span>YOGA</span></span>
+        </a>
+      </div>
+
+      <div class="sidebar-menu-wrapper">
+        <div class="sidebar-section-title">Member Menu</div>
+        <ul class="sidebar-menu">
+          <li><a href="index.html" class="dash-nav-link"><i class="bi bi-grid-1x2"></i><span>Overview</span></a></li>
+          <li><a href="bookings.html" class="dash-nav-link"><i class="bi bi-calendar-check"></i><span>My Bookings</span></a></li>
+          <li><a href="class-history.html" class="dash-nav-link"><i class="bi bi-clock-history"></i><span>Class History</span></a></li>
+          <li><a href="membership.html" class="dash-nav-link"><i class="bi bi-gem"></i><span>My Membership</span></a></li>
+          <li><a href="payments.html" class="dash-nav-link"><i class="bi bi-receipt"></i><span>Payment History</span></a></li>
+          <li><a href="profile.html" class="dash-nav-link"><i class="bi bi-person"></i><span>Wellness Profile</span></a></li>
+          <li><a href="settings.html" class="dash-nav-link active"><i class="bi bi-gear"></i><span>Account Settings</span></a></li>
+        </ul>
+
+        <div class="sidebar-section-title">Studio Quick Links</div>
+        <ul class="sidebar-menu">
+          <li><a href="../schedule.html" class="dash-nav-link"><i class="bi bi-calendar3"></i><span>Full Schedule</span></a></li>
+          <li><a href="../classes.html" class="dash-nav-link"><i class="bi bi-card-list"></i><span>Browse Classes</span></a></li>
+          <li><a href="../index.html" class="dash-nav-link"><i class="bi bi-arrow-up-right-square"></i><span>Public Site</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="../login.html" class="dash-nav-link text-danger" style="color: #b33939 !important;"><i class="bi bi-box-arrow-left"></i><span>Log Out</span></a>
+      </div>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn"><i class="bi bi-list"></i></button>
+          <div style="font-size: 0.95rem; font-weight: 600; color: var(--color-black);">Account & Security Settings</div>
+        </div>
+        <div class="topbar-right">
+          <button type="button" class="theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button type="button" class="rtl-toggle-btn" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+          <div class="dropdown-custom">
+            <button type="button" class="dropdown-toggle-custom">
+              <img src="../assets/images/instructors/elena-rostova.jpg" alt="Member Avatar" class="user-avatar-sm">
+              <span class="d-none d-md-inline" style="font-size: 0.88rem; font-weight: 600; color: var(--color-black);">Elena R.</span>
+            </button>
+            <ul class="dropdown-menu-custom">
+              <li><a href="profile.html"><i class="bi bi-person"></i> Wellness Profile</a></li>
+              <li><a href="membership.html"><i class="bi bi-gem"></i> My Membership</a></li>
+              <li><a href="../login.html"><i class="bi bi-box-arrow-left"></i> Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <div class="mb-4">
+          <h2 style="font-size: 1.8rem; margin-bottom: 4px;">Account Settings</h2>
+          <p style="font-size: 0.9rem; color: var(--color-black-muted); margin: 0;">Manage your security password, session notifications, and studio preferences.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Password & Security -->
+          <div class="col-lg-6">
+            <div class="dashboard-card">
+              <h4 style="font-size: 1.25rem; margin-bottom: 16px;"><i class="bi bi-shield-lock text-primary me-2"></i> Password & Security</h4>
+              <form data-validate="true" data-success-message="Password updated successfully!">
+                <div class="mb-3">
+                  <label class="form-label">Current Password</label>
+                  <div class="position-relative">
+                    <input type="password" class="form-control" required placeholder="••••••••">
+                    <button type="button" class="password-toggle-btn" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--color-black-muted);"><i class="bi bi-eye"></i></button>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">New Password</label>
+                  <div class="position-relative">
+                    <input type="password" class="form-control" required placeholder="Min 8 characters">
+                    <button type="button" class="password-toggle-btn" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--color-black-muted);"><i class="bi bi-eye"></i></button>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label">Confirm New Password</label>
+                  <div class="position-relative">
+                    <input type="password" class="form-control" required placeholder="Repeat new password">
+                    <button type="button" class="password-toggle-btn" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--color-black-muted);"><i class="bi bi-eye"></i></button>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-outline-dark btn-sm">Update Password</button>
+              </form>
+            </div>
+
+            <!-- Danger Zone -->
+            <div class="dashboard-card" style="border-color: rgba(179,57,57,0.3);">
+              <h4 style="font-size: 1.2rem; color: #b33939; margin-bottom: 8px;"><i class="bi bi-exclamation-triangle me-2"></i> Account Deactivation</h4>
+              <p style="font-size: 0.88rem; color: var(--color-black-muted); margin-bottom: 16px;">
+                Permanently close your member profile and cancel any active recurring subscriptions.
+              </p>
+              <button type="button" class="btn btn-outline-dark btn-sm" style="color: #b33939 !important; border-color: rgba(179,57,57,0.3) !important;" onclick="if(confirm('Are you certain you wish to deactivate your profile?')){window.showToast('Deactivation request sent.');}">
+                Deactivate Member Profile
+              </button>
+            </div>
+          </div>
+
+          <!-- Notification Toggles & Accessibility -->
+          <div class="col-lg-6">
+            <div class="dashboard-card mb-4">
+              <h4 style="font-size: 1.25rem; margin-bottom: 16px;"><i class="bi bi-bell text-primary me-2"></i> Notification Preferences</h4>
+              <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.9rem;">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong>Class Booking Confirmations</strong>
+                    <small style="display: block; color: var(--color-black-muted);">Send confirmation emails upon mat reservation.</small>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" checked>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong>2-Hour SMS Session Reminder</strong>
+                    <small style="display: block; color: var(--color-black-muted);">Helpful text reminder with mat number before class.</small>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" checked>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong>Sunday Mindful Dispatch</strong>
+                    <small style="display: block; color: var(--color-black-muted);">Weekly essays and recorded audio breathwork prompts.</small>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" checked>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong>Waitlist Spot Alerts</strong>
+                    <small style="display: block; color: var(--color-black-muted);">Instant alert if a spot opens up in a sold-out session.</small>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" checked>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <h4 style="font-size: 1.25rem; margin-bottom: 16px;"><i class="bi bi-sliders text-primary me-2"></i> Display & Language</h4>
+              <div class="mb-3">
+                <label class="form-label">Theme Mode</label>
+                <div class="d-flex gap-2">
+                  <button type="button" class="btn btn-outline-dark btn-sm theme-toggle-btn">
+                    <i class="bi bi-moon-stars me-1"></i> Toggle Dark/Light Mode
+                  </button>
+                  <button type="button" class="btn btn-outline-dark btn-sm rtl-toggle-btn">
+                    <i class="bi bi-translate me-1"></i> Toggle RTL Layout
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js?v=2.2"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
